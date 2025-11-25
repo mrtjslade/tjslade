@@ -1,0 +1,180 @@
+/* NAVBAR WRAPPER */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  z-index: 15;
+}
+
+.targeting-module {
+  position: relative;
+  padding: 0.5rem 2rem;
+}
+
+/* PANEL LIGHTS */
+.panel-lights {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
+}
+
+.light {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+  animation: blink 1.6s infinite alternate;
+}
+
+.light.red {
+  background: #ff2d2d;
+  animation-duration: 1.2s;
+}
+.light.yellow {
+  background: #ffcc33;
+  animation-duration: 1.8s;
+}
+.light.green {
+  background: #33ff55;
+  animation-duration: 1.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.4;
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1.4);
+  }
+}
+
+/* FRAME AROUND SCREEN */
+.hud-frame {
+  padding: 0.6rem;
+  border-radius: 22px;
+  background: radial-gradient(circle at top left, #444 0, #111 40%, #000 100%);
+  box-shadow: 0 0 22px rgba(255, 220, 50, 0.2),
+    inset 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+/* ACTUAL SCREEN AREA */
+.hud-screen {
+  width: min(480px, 90vw);
+  height: 160px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  border: 3px solid #444;
+
+  /* CRT + glow */
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+
+  animation: bootUp 1.4s ease-out forwards, crtPulse 3s infinite ease-in-out;
+}
+
+/* BOOT-UP FLASH */
+@keyframes bootUp {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.05);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.05);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* STRONGER WHITE PULSE */
+@keyframes crtPulse {
+  0% {
+    box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    box-shadow: inset 0 0 28px rgba(255, 255, 255, 0.18);
+  }
+  100% {
+    box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* GRID */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#ffcc33 1px, transparent 1px),
+    linear-gradient(90deg, #ffcc33 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.32;
+  pointer-events: none;
+
+  animation: gridDrift 18s linear infinite;
+}
+
+@keyframes gridDrift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 80px;
+  }
+}
+
+/* OPTIONAL red lines */
+.red-lines {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    90deg,
+    transparent 48%,
+    #ff3333 49%,
+    #ff3333 51%,
+    transparent 52%
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* LINKS */
+.nav-links {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  color: #ffcc33;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(255, 204, 51, 0.8);
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #ff3333;
+  text-shadow: 0 0 14px rgba(255, 51, 51, 0.9);
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hud-screen {
+    height: 150px;
+  }
+  .nav-links a {
+    font-size: 1.3rem;
+  }
+}

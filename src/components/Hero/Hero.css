@@ -1,0 +1,15 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xxl);
+  color: white;
+  z-index: 10;
+}

@@ -1,13 +1,148 @@
-body {
+/* -------------------------------------------------------
+   1. RESET (Values all browsers agree on)
+-------------------------------------------------------- */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Removes weird scrolling issues on mobile */
+html {
+  scroll-behavior: smooth;
+}
+
+/* -------------------------------------------------------
+   2. GLOBAL VARIABLES
+-------------------------------------------------------- */
+:root {
+  /* ---- COLORS ---- */
+  --color-bg: #000000;
+  --color-white: #ffffff;
+  --color-gold: #ffd700;
+  --color-gray: #cccccc;
+
+  /* ---- FONTS ---- */
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ---- FONT SIZES (fluid responsive) ---- */
+  --fs-xxl: clamp(3rem, 6vw, 6rem);
+  --fs-xl: clamp(2.5rem, 4vw, 4rem);
+  --fs-lg: clamp(1.8rem, 3.5vw, 2.4rem);
+  --fs-md: clamp(1.1rem, 1.5vw, 1.4rem);
+  --fs-base: 1rem;
+  --fs-sm: 0.875rem;
+
+  /* ---- SPACING SCALE ---- */
+  --space-xxl: 6rem;
+  --space-xl: 4rem;
+  --space-lg: 3rem;
+  --space-md: 2rem;
+  --space-sm: 1rem;
+  --space-xs: 0.5rem;
+
+  /* ---- BORDERS ---- */
+  --radius: 10px;
+
+  /* ---- SHADOWS ---- */
+  --shadow-soft: 0 0 20px rgba(255, 255, 255, 0.1);
+  --shadow-gold: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* -------------------------------------------------------
+   3. GLOBAL ELEMENT STYLES
+-------------------------------------------------------- */
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Heading font */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+/* -------------------------------------------------------
+   4. GLOBAL UTILITY CLASSES
+-------------------------------------------------------- */
+
+/* Simple max-width wrapper */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Center everything (flex) */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Margin utilities */
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+.mt-md {
+  margin-top: var(--space-md);
+}
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--color-gold);
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: var(--fs-md);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+  box-shadow: var(--shadow-gold);
+}
+
+/* A fading effect for any section (nice for About) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInSection 1s ease forwards;
+}
+
+@keyframes fadeInSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

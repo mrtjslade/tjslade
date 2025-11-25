@@ -1,0 +1,83 @@
+.work-section {
+  padding: 6rem 0;
+  color: white;
+  position: relative;
+}
+
+.work-title {
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  text-align: center;
+  color: #ffcc33;
+  text-shadow: 0 0 12px rgba(255, 204, 51, 0.7);
+  margin-bottom: 3rem;
+}
+
+/* Card layout */
+.work-grid {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Mission Cards */
+.work-card {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  padding: 2rem;
+
+  border: 1px solid rgba(255, 204, 51, 0.3);
+  box-shadow: 0 0 20px rgba(255, 204, 51, 0.15),
+    inset 0 0 15px rgba(255, 204, 51, 0.08);
+
+  animation: flicker 4s infinite ease-in-out alternate;
+}
+
+/* subtle CRT flicker */
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.work-name {
+  font-family: var(--font-heading);
+  color: #ffcc33;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.work-services {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.work-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: #ffcc33;
+  border: 1px solid #ffcc33;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(255, 204, 51, 0.8);
+  transition: 0.2s;
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+}
+
+.work-button:hover {
+  color: black;
+  background: #ffcc33;
+  box-shadow: 0 0 15px rgba(255, 204, 51, 0.8);
+}
