@@ -13,6 +13,11 @@ function Work() {
 
             <p className="work-services">{project.services}</p>
 
+            {/* New description field */}
+            {project.description && (
+              <p className="work-description">{project.description}</p>
+            )}
+
             <a
               href={project.url}
               target="_blank"

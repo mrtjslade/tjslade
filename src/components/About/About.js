@@ -7,16 +7,35 @@ function About() {
         <h2 className="about-title">ABOUT ME</h2>
 
         <p className="about-text">
-          I’m TJ Slade — a software engineer, teacher, and full-stack web
-          specialist. I build modern, fast, and accessible digital experiences
-          using React, Firebase, WordPress, Python automations, and custom APIs.
+          I am TJ Slade, a front end developer, educator, and WordPress
+          specialist who brings order to the digital universe. I build modern,
+          scalable, and accessible WordPress systems using custom code and
+          advanced development tools that keep projects running as smoothly as
+          the Millennium Falcon at full hyperdrive.
         </p>
 
         <p className="about-text">
-          My goal is simple: create clean, powerful solutions that actually help
-          people. Whether it’s running timing systems at track meets, building
-          apps for schools, working with nonprofits, or managing large WordPress
-          deployments… I love making complex things feel effortless.
+          My expertise is rooted in WordPress development. I create themes,
+          custom post types, content structures, and plugin level functionality
+          using PHP, JavaScript, ACF, WooCommerce, Elementor, Crocoblock, and
+          the WordPress REST API. When a project calls for more power, I expand
+          into Python automations, deployment management, and React applications
+          capable of taking on larger missions.
+        </p>
+
+        <p className="about-text">
+          On the teaching side, I have trained students in Java, Python, HTML
+          and CSS, JavaScript, and graphic design. I believe in teaching real
+          skills through real projects, helping others grow from apprentice to
+          master through creative problem solving, responsive design thinking,
+          and a clear understanding of how the code actually moves the pixels.
+        </p>
+
+        <p className="about-text">
+          I run a one stop shop for digital needs, building websites,
+          applications, automation tools, and full scale online systems. Whether
+          the mission is for schools, nonprofits, timing systems, or business
+          growth, I engineer technology that feels effortless to use.
         </p>
       </div>
     </section>

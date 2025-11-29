@@ -7,12 +7,13 @@
   z-index: 15;
 }
 
+/* MODULE STRUCTURE WRAPPING LIGHTS + HUD */
 .targeting-module {
   position: relative;
   padding: 0.5rem 2rem;
 }
 
-/* PANEL LIGHTS */
+/* LIGHT PANEL ROW */
 .panel-lights {
   display: flex;
   justify-content: center;
@@ -20,6 +21,7 @@
   margin-bottom: 0.8rem;
 }
 
+/* BASE LIGHT STYLE */
 .light {
   width: 14px;
   height: 14px;
@@ -28,19 +30,31 @@
   animation: blink 1.6s infinite alternate;
 }
 
+/* LIGHT COLOR - RED */
 .light.red {
-  background: #ff2d2d;
+  background: red;
   animation-duration: 1.2s;
 }
+
+/* LIGHT COLOR - YELLOW */
 .light.yellow {
-  background: #ffcc33;
+  background: yellow;
   animation-duration: 1.8s;
 }
+
+/* LIGHT COLOR - GREEN */
 .light.green {
-  background: #33ff55;
+  background: green;
   animation-duration: 1.4s;
 }
 
+/* LIGHT COLOR - BLUE */
+.light.blue {
+  background: blue;
+  animation-duration: 1.4s;
+}
+
+/* LIGHT BLINK ANIMATION */
 @keyframes blink {
   0% {
     opacity: 0.4;
@@ -52,7 +66,7 @@
   }
 }
 
-/* FRAME AROUND SCREEN */
+/* HUD FRAME BORDER / CONTAINER AROUND SCREEN */
 .hud-frame {
   padding: 0.6rem;
   border-radius: 22px;
@@ -61,7 +75,7 @@
     inset 0 0 15px rgba(255, 255, 255, 0.08);
 }
 
-/* ACTUAL SCREEN AREA */
+/* INNER SCREEN SURFACE */
 .hud-screen {
   width: min(480px, 90vw);
   height: 160px;
@@ -70,15 +84,12 @@
   overflow: hidden;
   background: #000;
   border: 3px solid #444;
-
-  /* CRT + glow */
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.15),
     inset 0 0 10px rgba(255, 255, 255, 0.1);
-
   animation: bootUp 1.4s ease-out forwards, crtPulse 3s infinite ease-in-out;
 }
 
-/* BOOT-UP FLASH */
+/* INITIAL STARTUP SCREEN ANIMATION */
 @keyframes bootUp {
   0% {
     opacity: 0;
@@ -93,7 +104,7 @@
   }
 }
 
-/* STRONGER WHITE PULSE */
+/* CRT PULSING BRIGHTNESS EFFECT */
 @keyframes crtPulse {
   0% {
     box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.05);
@@ -106,7 +117,7 @@
   }
 }
 
-/* GRID */
+/* MOVING GRID LAYER */
 .grid {
   position: absolute;
   inset: 0;
@@ -115,10 +126,10 @@
   background-size: 40px 40px;
   opacity: 0.32;
   pointer-events: none;
-
   animation: gridDrift 18s linear infinite;
 }
 
+/* GRID MOVEMENT ANIMATION */
 @keyframes gridDrift {
   from {
     background-position: 0 0;
@@ -128,7 +139,7 @@
   }
 }
 
-/* OPTIONAL red lines */
+/* OPTIONAL RED CROSSHAIR OVERLAY */
 .red-lines {
   position: absolute;
   inset: 0;
@@ -143,7 +154,7 @@
   pointer-events: none;
 }
 
-/* LINKS */
+/* NAVIGATION LINK CONTAINER POSITIONING */
 .nav-links {
   position: absolute;
   inset: 0;
@@ -154,6 +165,7 @@
   z-index: 10;
 }
 
+/* NAV LINK TYPOGRAPHY + GLOW */
 .nav-links a {
   font-family: var(--font-heading);
   color: #ffcc33;
@@ -163,13 +175,14 @@
   transition: 0.25s ease;
 }
 
+/* NAV LINK HOVER GLOW */
 .nav-links a:hover {
   color: #ff3333;
   text-shadow: 0 0 14px rgba(255, 51, 51, 0.9);
   transform: scale(1.1);
 }
 
-/* RESPONSIVE */
+/* MOBILE SCALING: SMALLER SCREEN + TEXT */
 @media (max-width: 600px) {
   .hud-screen {
     height: 150px;
