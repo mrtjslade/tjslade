@@ -10,7 +10,6 @@ function Contact() {
         action="https://formsubmit.co/mrtjslade@gmail.com"
         method="POST"
       >
-        {/* formsubmit settings */}
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
         <input
@@ -47,7 +46,6 @@ function Contact() {
         </button>
       </form>
 
-      {/* social and direct email row */}
       <div className="contact-links">
         <a
           href="https://www.linkedin.com/in/mrtjslade"
@@ -56,7 +54,6 @@ function Contact() {
           className="contact-icon"
           aria-label="LinkedIn"
         >
-          {/* LinkedIn Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -75,7 +72,6 @@ function Contact() {
           className="contact-icon"
           aria-label="GitHub"
         >
-          {/* GitHub Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"

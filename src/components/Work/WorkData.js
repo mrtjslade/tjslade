@@ -8,28 +8,29 @@ export const projects = [
   },
   {
     title: "Eylar Insurance Solutions",
-    services: "New Website & Email Hosting",
+    services: "New Website, Email Hosting, Hosting",
     description:
       "A minimal trust focused insurance site with stable email hosting and clear communication structure.",
     url: "https://eylarinsolutions.com",
   },
   {
     title: "Headed North Foundation",
-    services: "Website Redesign & Hosting",
+    services: "Website Redesign, Hosting",
     description:
       "A redesigned nonprofit foundation site with clear donation visibility and clean student focused messaging.",
     url: "https://headednorth.org",
   },
   {
     title: "Jana Koehn Photography",
-    services: "New Website & Hosting",
+    services: "New Website, Hosting",
     description:
       "A soft natural layout for photography portfolios, client galleries, and booking inquiries with clean UX and responsive visuals.",
     url: "https://janakoehnphotos.com",
   },
   {
-    title: "Kathi Ross Nash",
-    services: "Website Redesign, E-Commerce, Video Platform, Event & Ticket Management, Hosting, Google Workspace",
+    title: "KRN NY Pilates",
+    services:
+      "Website Redesign, E-Commerce, Video Platform, Event & Ticket Management, Hosting, Google Workspace",
     description:
       "A large scale Pilates platform transformed into a subscription based video library with improved purchase flow, content organization, speed optimization, and reliable hosting.",
     url: "https://kathrynrossnash.com",
@@ -58,7 +59,8 @@ export const projects = [
   },
   {
     title: "Tarry Chiropractic",
-    services: "New Website, Google Workspace, SEO Sanitation, Local SEO, Hosting",
+    services:
+      "New Website, Google Workspace, SEO Sanitation, Local SEO, Hosting",
     description:
       "A clean and accessible chiropractic site with Workspace integration, hosting control, and search structure to increase local reach.",
     url: "https://tarrychiro.com",

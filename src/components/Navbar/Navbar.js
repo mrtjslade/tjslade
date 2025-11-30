@@ -17,7 +17,7 @@ function Navbar() {
             <div className="nav-links">
               <a href="#about">ABOUT</a>
               <a href="#work">WORK</a>
-              <a href="#work">SKILLS</a>
+              <a href="#skills">SKILLS</a>
               <a href="#contact">CONTACT</a>
             </div>
           </div>

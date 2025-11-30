@@ -2,7 +2,7 @@ import "./App.css";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
-import BackgroundStars from "./components/Stars/BackgroundStars";
+import StarsBackground from "./components/Stars/StarsBackground";
 import Work from "./components/Work/Work";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact/Contact";
@@ -10,7 +10,7 @@ import Contact from "./components/Contact/Contact";
 function App() {
   return (
     <>
-      <BackgroundStars />
+      <StarsBackground />
       <Hero />
       <Navbar />
       <About />

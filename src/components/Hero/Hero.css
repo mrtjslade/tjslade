@@ -1,3 +1,4 @@
+/* Hero section wrapper */
 .hero {
   height: 100vh;
   position: relative;
@@ -7,10 +8,11 @@
   align-items: center;
 }
 
+/* Main hero heading text */
 .hero-text {
   font-family: var(--font-heading);
   font-size: var(--fs-xxl);
-  color: gold;
+  color: var(--color-gold);
   z-index: 10;
-  text-shadow: 0 0 12px rgba(255, 204, 51, 0.7);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
 }

@@ -1,38 +1,47 @@
+/* Skills section wrapper */
 .skills-section {
-  padding: 6rem 0;
-  color: white;
+  padding: var(--space-xl) 0;
+  color: var(--color-white);
   text-align: center;
 }
 
+/* Skills section title */
 .skills-title {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
-  color: #ffcc33;
-  text-shadow: 0 0 12px rgba(255, 204, 51, 0.7);
-  margin-bottom: 3rem;
+  font-size: var(--fs-xl);
+  color: var(--color-gold);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+  margin-bottom: var(--space-lg);
 }
 
-/* Skills Grid */
+/* Skills grid layout */
 .skills-grid {
   width: min(1100px, 92%);
   margin: 0 auto;
   display: grid;
-  gap: 2rem;
+  gap: var(--space-md);
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* Individual Cards */
+/* Individual skill card */
 .skill-card {
   background: rgba(0, 0, 0, 0.55);
-  padding: 2rem;
+  padding: var(--space-md);
   border-radius: 16px;
-  border: 1px solid rgba(255, 204, 51, 0.3);
-  box-shadow: 0 0 20px rgba(255, 204, 51, 0.15),
-    inset 0 0 15px rgba(255, 204, 51, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.15),
+    inset 0 0 15px rgba(255, 215, 0, 0.08);
   transition: 0.3s ease-in-out;
 }
 
+/* Increase card title size */
+.skill-card h3 {
+  font-size: var(--fs-md);
+  color: var(--color-gold);
+}
+
+/* Skill card hover glow */
 .skill-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 28px rgba(255, 204, 51, 0.35);
+  box-shadow: 0 0 28px rgba(255, 215, 0, 0.35);
 }

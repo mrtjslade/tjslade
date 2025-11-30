@@ -1,19 +1,19 @@
-/* NAVBAR WRAPPER */
+/* Navbar wrapper */
 .navbar {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: var(--space-lg);
   z-index: 15;
 }
 
-/* MODULE STRUCTURE WRAPPING LIGHTS + HUD */
+/* Targeting module wrapper */
 .targeting-module {
   position: relative;
   padding: 0.5rem 2rem;
 }
 
-/* LIGHT PANEL ROW */
+/* Panel lights row */
 .panel-lights {
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@
   margin-bottom: 0.8rem;
 }
 
-/* BASE LIGHT STYLE */
+/* Base light style */
 .light {
   width: 14px;
   height: 14px;
@@ -30,31 +30,31 @@
   animation: blink 1.6s infinite alternate;
 }
 
-/* LIGHT COLOR - RED */
+/* Light color (RED) */
 .light.red {
-  background: red;
+  background: var(--color-red);
   animation-duration: 1.2s;
 }
 
-/* LIGHT COLOR - YELLOW */
+/* Light color (YELLOW) */
 .light.yellow {
-  background: yellow;
+  background: var(--color-gold);
+  animation-duration: 1.4s;
+}
+
+/* Light color (GREEN) */
+.light.green {
+  background: #00ff66;
+  animation-duration: 1.6s;
+}
+
+/* Light color (BLUE) */
+.light.blue {
+  background: #3399ff;
   animation-duration: 1.8s;
 }
 
-/* LIGHT COLOR - GREEN */
-.light.green {
-  background: green;
-  animation-duration: 1.4s;
-}
-
-/* LIGHT COLOR - BLUE */
-.light.blue {
-  background: blue;
-  animation-duration: 1.4s;
-}
-
-/* LIGHT BLINK ANIMATION */
+/* Light blink animation */
 @keyframes blink {
   0% {
     opacity: 0.4;
@@ -66,30 +66,30 @@
   }
 }
 
-/* HUD FRAME BORDER / CONTAINER AROUND SCREEN */
+/* HUD frame border */
 .hud-frame {
   padding: 0.6rem;
   border-radius: 22px;
-  background: radial-gradient(circle at top left, #444 0, #111 40%, #000 100%);
-  box-shadow: 0 0 22px rgba(255, 220, 50, 0.2),
+  background: radial-gradient(circle at top left, #444 0%, #111 40%, #000 100%);
+  box-shadow: 0 0 22px rgba(255, 215, 0, 0.2),
     inset 0 0 15px rgba(255, 255, 255, 0.08);
 }
 
-/* INNER SCREEN SURFACE */
+/* HUD inner screen */
 .hud-screen {
   width: min(480px, 90vw);
   height: 160px;
   border-radius: 18px;
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: var(--color-bg);
   border: 3px solid #444;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.15),
     inset 0 0 10px rgba(255, 255, 255, 0.1);
   animation: bootUp 1.4s ease-out forwards, crtPulse 3s infinite ease-in-out;
 }
 
-/* INITIAL STARTUP SCREEN ANIMATION */
+/* Boot-up animation */
 @keyframes bootUp {
   0% {
     opacity: 0;
@@ -104,7 +104,7 @@
   }
 }
 
-/* CRT PULSING BRIGHTNESS EFFECT */
+/* CRT pulse brightness */
 @keyframes crtPulse {
   0% {
     box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.05);
@@ -117,19 +117,19 @@
   }
 }
 
-/* MOVING GRID LAYER */
+/* Moving grid layer */
 .grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(#ffcc33 1px, transparent 1px),
-    linear-gradient(90deg, #ffcc33 1px, transparent 1px);
+  background-image: linear-gradient(var(--color-gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-gold) 1px, transparent 1px);
   background-size: 40px 40px;
   opacity: 0.32;
   pointer-events: none;
   animation: gridDrift 18s linear infinite;
 }
 
-/* GRID MOVEMENT ANIMATION */
+/* Grid scroll animation */
 @keyframes gridDrift {
   from {
     background-position: 0 0;
@@ -139,55 +139,66 @@
   }
 }
 
-/* OPTIONAL RED CROSSHAIR OVERLAY */
+/* Red crosshair overlay */
 .red-lines {
   position: absolute;
   inset: 0;
   background-image: linear-gradient(
     90deg,
     transparent 48%,
-    #ff3333 49%,
-    #ff3333 51%,
+    var(--color-red) 49%,
+    var(--color-red) 51%,
     transparent 52%
   );
   opacity: 0.55;
   pointer-events: none;
 }
 
-/* NAVIGATION LINK CONTAINER POSITIONING */
+/* Nav link container positioning */
 .nav-links {
   position: absolute;
   inset: 0;
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: var(--space-lg);
   align-items: center;
   z-index: 10;
 }
 
-/* NAV LINK TYPOGRAPHY + GLOW */
+/* Nav link text + glow */
 .nav-links a {
   font-family: var(--font-heading);
-  color: #ffcc33;
+  color: var(--color-gold);
   font-size: 1.6rem;
   text-decoration: none;
-  text-shadow: 0 0 10px rgba(255, 204, 51, 0.8);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
   transition: 0.25s ease;
 }
 
-/* NAV LINK HOVER GLOW */
+/* Nav link hover state */
 .nav-links a:hover {
-  color: #ff3333;
+  color: var(--color-red);
   text-shadow: 0 0 14px rgba(255, 51, 51, 0.9);
   transform: scale(1.1);
 }
 
-/* MOBILE SCALING: SMALLER SCREEN + TEXT */
+/* Mobile scaling adjustments */
 @media (max-width: 600px) {
   .hud-screen {
     height: 150px;
   }
+  .nav-links {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
   .nav-links a {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .hud-screen {
+    width: 100%;
+    min-width: 260px;
+    height: 200px; /* same height as before */
   }
 }

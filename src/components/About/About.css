@@ -1,31 +1,31 @@
+/* About section wrapper */
 .about-section {
   position: relative;
-  padding: 6rem 0;
+  padding: var(--space-xl) 0;
   background: transparent;
-  color: white;
+  color: var(--color-white);
   z-index: 5;
 }
 
+/* Glassy about container */
 .about-container {
   width: min(900px, 90%);
   margin: 0 auto;
-  padding: 3rem 2rem;
-  border-radius: 20px;
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius);
 
-  /* subtle glassy panel */
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(4px);
 
-  /* soft gold glow */
-  box-shadow: 0 0 25px rgba(255, 204, 51, 0.15),
-    inset 0 0 20px rgba(255, 204, 51, 0.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15),
+    inset 0 0 20px rgba(255, 215, 0, 0.05);
 
   animation: aboutFadeIn 1.2s ease forwards;
   opacity: 0;
   transform: translateY(40px);
 }
 
-/* entrance animation */
+/* Fade-in animation */
 @keyframes aboutFadeIn {
   to {
     opacity: 1;
@@ -33,17 +33,19 @@
   }
 }
 
+/* About section title */
 .about-title {
   font-family: var(--font-heading);
-  font-size: 3.4rem;
+  font-size: var(--fs-xl);
   letter-spacing: 2px;
-  margin-bottom: 1.4rem;
-  color: #ffcc33;
-  text-shadow: 0 0 12px rgba(255, 204, 51, 0.7);
+  margin-bottom: var(--space-sm);
+
+  color: var(--color-gold);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
   position: relative;
 }
 
-/* thin gold line under title */
+/* Gold underline accent */
 .about-title::after {
   content: "";
   position: absolute;
@@ -51,29 +53,38 @@
   left: 0;
   width: 90px;
   height: 4px;
-  background: #ffcc33;
+  background: var(--color-gold);
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(255, 204, 51, 0.7);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
 }
 
+/* About text paragraph */
 .about-text {
-  font-size: 1.25rem;
+  font-size: var(--fs-md);
   line-height: 1.9;
-  margin-top: 2rem;
+  margin-top: var(--space-md);
   opacity: 0.92;
 }
 
-/* faint faint grid behind panel */
+/* Faint gold grid behind panel */
 .about-section::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image: linear-gradient(
-      rgba(255, 204, 51, 0.05) 1px,
+      rgba(255, 215, 0, 0.05) 1px,
       transparent 1px
     ),
-    linear-gradient(90deg, rgba(255, 204, 51, 0.05) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   opacity: 0.08;
+}
+
+/* Mobile scaling adjustments */
+@media (max-width: 600px) {
+  .about-section {
+    width: 90%;
+    padding: var(--space-md) var(--space-sm);
+  }
 }

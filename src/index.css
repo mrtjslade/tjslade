@@ -34,3 +34,16 @@
   --shadow-gold: 0 0 10px rgba(255, 215, 0, 0.6);
   --shadow-red: 0 0 12px rgba(255, 51, 51, 0.6);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+p {
+  font-family: var(--font-body);
+}
