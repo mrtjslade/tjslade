@@ -1,3 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 :root {
   /* ---- COLORS ---- */
   --color-bg: #000000;
@@ -5,6 +15,8 @@
   --color-gold: #ffd700;
   --color-gray: #cccccc;
   --color-red: #ff3333;
+  --color-accent: var(--color-gold);
+  --color-accent-soft: rgba(255, 215, 0, 0.7);
 
   /* ---- FONTS ---- */
   --font-heading: "Bebas Neue", sans-serif;
@@ -33,6 +45,29 @@
   --shadow-soft: 0 0 20px rgba(255, 255, 255, 0.1);
   --shadow-gold: 0 0 10px rgba(255, 215, 0, 0.6);
   --shadow-red: 0 0 12px rgba(255, 51, 51, 0.6);
+}
+
+[data-theme="professional"] {
+  --color-bg: #ffffff;
+  --color-white: #1a1a1a;
+  --color-gold: #1a1a1a;
+  --color-gray: #5a5a5a;
+  --color-red: #b8333d;
+  --color-accent: #1a1a1a;
+  --color-accent-soft: rgba(184, 51, 61, 0.14);
+
+  --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --shadow-soft: none;
+  --shadow-gold: none;
+  --shadow-red: none;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-white);
 }
 
 h1,

@@ -66,6 +66,13 @@
   opacity: 0.92;
 }
 
+/* Smaller, tighter copy in space mode */
+[data-theme="space"] .about-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-top: var(--space-sm);
+}
+
 /* Faint gold grid behind panel */
 .about-section::before {
   content: "";

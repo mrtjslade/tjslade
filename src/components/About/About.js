@@ -1,42 +1,78 @@
 import "./About.css";
+import { useTheme } from "../../context/ThemeContext";
+import DecodeText from "../DecodeText/DecodeText";
+import Reveal from "../Reveal/Reveal";
 
 function About() {
+  const { mode } = useTheme();
+  const isPro = mode === "professional";
+
   return (
     <section id="about" className="about-section">
       <div className="about-container">
-        <h2 className="about-title">ABOUT ME</h2>
+        <Reveal>
+          <h2 className="about-title">
+            {isPro ? "ABOUT" : <DecodeText>DOSSIER</DecodeText>}
+          </h2>
+        </Reveal>
 
-        <p className="about-text">
-          I am TJ Slade, a front end developer, educator, and WordPress
-          specialist who brings order to the digital universe. I build modern,
-          scalable, and accessible WordPress systems using custom code and
-          advanced development tools that keep projects running as smoothly as
-          the Millennium Falcon at full hyperdrive.
-        </p>
+        {isPro ? (
+          <>
+            <Reveal delay={80}>
+              <p className="about-text">
+                I'm TJ Slade, a web developer building modern, scalable client
+                sites with React, Next.js, and WordPress. I focus on clean
+                code, strong performance, and interfaces that hold up under
+                real world use.
+              </p>
+            </Reveal>
 
-        <p className="about-text">
-          My expertise is rooted in WordPress development. I create themes,
-          custom post types, content structures, and plugin level functionality
-          using PHP, JavaScript, ACF, WooCommerce, Elementor, Crocoblock, and
-          the WordPress REST API. When a project calls for more power, I expand
-          into Python automations, deployment management, and React applications
-          capable of taking on larger missions.
-        </p>
+            <Reveal delay={160}>
+              <p className="about-text">
+                My work spans the full stack of front end engineering:
+                JavaScript and ES6, React component architecture, Next.js
+                applications, custom WordPress themes and plugins, and the
+                backend logic that ties it all together with PHP, Node, and
+                Python automation.
+              </p>
+            </Reveal>
 
-        <p className="about-text">
-          On the teaching side, I have trained students in Java, Python, HTML
-          and CSS, JavaScript, and graphic design. I believe in teaching real
-          skills through real projects, helping others grow from apprentice to
-          master through creative problem solving, responsive design thinking,
-          and a clear understanding of how the code actually moves the pixels.
-        </p>
+            <Reveal delay={240}>
+              <p className="about-text">
+                I deliver everything a client needs to launch and maintain a
+                digital presence: design, development, hosting, Google
+                Workspace, SEO, and ongoing maintenance. From small business
+                landing pages to large scale subscription platforms, I build
+                systems that are easy to operate and built to last.
+              </p>
+            </Reveal>
+          </>
+        ) : (
+          <>
+            <p className="about-text">
+              TJ Slade, code-slinger from the Outer Rim of the digital galaxy.
+              I build modern, scalable client sites with React, Next.js, and
+              WordPress. Clean code, strong performance, interfaces that hold
+              up under real combat.
+            </p>
 
-        <p className="about-text">
-          I run a one stop shop for digital needs, building websites,
-          applications, automation tools, and full scale online systems. Whether
-          the mission is for schools, nonprofits, timing systems, or business
-          growth, I engineer technology that feels effortless to use.
-        </p>
+            <p className="about-text">
+              My work spans the full stack of front end engineering: JavaScript
+              and ES6, React component arrays, Next.js applications, custom
+              WordPress themes and plugins, and the backend logic that ties it
+              all together with PHP, Node, and Python automation.
+            </p>
+
+            <p className="about-text">
+              I deliver everything a client needs to launch and maintain a
+              digital outpost: design, development, hosting, Google Workspace,
+              SEO, and ongoing maintenance. From small business landing pages
+              to capital-ship-class subscription platforms, I build systems
+              that operate effortlessly from the cockpit and hold up across
+              the sector.
+            </p>
+          </>
+        )}
       </div>
     </section>
   );

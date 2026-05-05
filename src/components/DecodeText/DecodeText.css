@@ -1,0 +1,78 @@
+.decode-text {
+  display: inline;
+}
+
+/* Each word is one non-breakable inline-block so letters never split mid-word. */
+.decode-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.decode-space {
+  display: inline;
+  white-space: pre;
+}
+
+.decode-letter {
+  display: inline-block;
+  font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+}
+
+/* CSS-only Aurebesh swap for body text in space mode (no per-letter animation).
+   When data-decoded="true", these resolve instantly to inherited fonts. */
+html[data-theme="space"]:not([data-decoded="true"]) .about-text,
+html[data-theme="space"]:not([data-decoded="true"]) .skill-card p,
+html[data-theme="space"]:not([data-decoded="true"]) .work-services,
+html[data-theme="space"]:not([data-decoded="true"]) .work-description,
+html[data-theme="space"]:not([data-decoded="true"]) .contact-input,
+html[data-theme="space"]:not([data-decoded="true"]) .contact-textarea,
+html[data-theme="space"]:not([data-decoded="true"]) .contact-input::placeholder,
+html[data-theme="space"]:not([data-decoded="true"])
+  .contact-textarea::placeholder,
+html[data-theme="space"]:not([data-decoded="true"]) .hud-counter {
+  font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+}
+
+.decode-letter--resolved {
+  animation: decodeLetter 520ms ease-out both;
+}
+
+@keyframes decodeLetter {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    color: inherit;
+    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+  }
+  35% {
+    opacity: 0;
+    transform: scale(0.4) translateY(-4px);
+    color: var(--color-red);
+    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+  }
+  55% {
+    opacity: 0;
+    transform: scale(0.4) translateY(4px);
+    color: var(--color-red);
+    font-family: inherit;
+  }
+  80% {
+    opacity: 0.85;
+    transform: scale(1.05) translateY(0);
+    color: inherit;
+    font-family: inherit;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    color: inherit;
+    font-family: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decode-letter {
+    font-family: inherit;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,466 @@
+/* All layout/visual overrides applied when [data-theme="professional"] is active.
+   Goal: clean resume aesthetic with black primary, subtle red accent, no glows. */
+
+[data-theme="professional"] body {
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+@media (min-width: 901px) {
+  [data-theme="professional"] body {
+    padding-left: 200px;
+  }
+}
+
+/* Strip all glow/shadow text effects globally in pro mode */
+[data-theme="professional"] h1,
+[data-theme="professional"] h2,
+[data-theme="professional"] h3,
+[data-theme="professional"] h4,
+[data-theme="professional"] h5,
+[data-theme="professional"] h6,
+[data-theme="professional"] p,
+[data-theme="professional"] a,
+[data-theme="professional"] button {
+  text-shadow: none;
+}
+
+/* ---------- Hero ---------- */
+[data-theme="professional"] .hero {
+  height: auto;
+  min-height: 0;
+  padding: 5rem 1.5rem 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 850px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+[data-theme="professional"] .hero-text {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #1a1a1a;
+  text-shadow: none;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.05;
+  animation: heroIntro 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-theme="professional"] .hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #5a5a5a;
+  margin: 0;
+  letter-spacing: 0.2px;
+  max-width: 600px;
+  line-height: 1.5;
+  animation: heroIntro 0.7s cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+
+@keyframes heroIntro {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="professional"] .hero-text,
+  [data-theme="professional"] .hero-subtitle {
+    animation: none;
+  }
+}
+
+/* ---------- Navbar (pro variant already minimal; refine spacing) ---------- */
+[data-theme="professional"] .navbar-pro {
+  background: #ffffff;
+  border-bottom: none;
+  padding: 0.9rem 1.5rem;
+  margin-top: 0;
+}
+
+[data-theme="professional"] .nav-links-pro a {
+  color: #333333;
+}
+
+[data-theme="professional"] .nav-links-pro a:hover {
+  color: #b8333d;
+}
+
+/* ---------- Shared section title style (resume header) ---------- */
+[data-theme="professional"] .about-title,
+[data-theme="professional"] .work-title,
+[data-theme="professional"] .skills-title,
+[data-theme="professional"] .contact-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #1a1a1a;
+  text-shadow: none;
+  border-bottom: 2px solid #b8333d;
+  padding: 0 0 0.4rem 0;
+  margin: 0 0 1rem 0;
+  position: static;
+}
+
+[data-theme="professional"] .work-section,
+[data-theme="professional"] .skills-section,
+[data-theme="professional"] .contact-section {
+  text-align: left;
+}
+
+[data-theme="professional"] .about-title::after {
+  display: none;
+}
+
+/* ---------- About ---------- */
+[data-theme="professional"] .about-section {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: transparent;
+  color: #1a1a1a;
+}
+
+[data-theme="professional"] .about-section::before {
+  display: none;
+}
+
+[data-theme="professional"] .about-container {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  animation: none;
+  opacity: 1;
+  transform: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+}
+
+[data-theme="professional"] .about-text {
+  color: #2a2a2a;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 0.8rem 0;
+  opacity: 1;
+}
+
+/* ---------- Work (resume project list as cards) ---------- */
+[data-theme="professional"] .work-section {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: transparent;
+}
+
+[data-theme="professional"] .work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+[data-theme="professional"] .work-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 0.9rem 1rem;
+  margin: 0;
+  min-height: 0;
+  position: relative;
+  animation: none;
+  opacity: 1;
+  transform: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+[data-theme="professional"] .work-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: #d0d0d0;
+}
+
+[data-theme="professional"] .work-card::before {
+  content: none;
+}
+
+[data-theme="professional"] .work-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.15rem;
+}
+
+[data-theme="professional"] .work-name-link {
+  text-decoration: underline;
+  text-decoration-color: #b8333d;
+  text-underline-offset: 3px;
+  color: #b8333d;
+  display: inline-block;
+}
+
+[data-theme="professional"] .work-name-link:hover {
+  color: #8a2630;
+  text-decoration-color: #8a2630;
+}
+
+[data-theme="professional"] .work-name-link:hover .work-name {
+  color: #8a2630;
+}
+
+[data-theme="professional"] .work-name {
+  color: #b8333d;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: none;
+  transition: color 0.2s ease;
+}
+
+[data-theme="professional"] .work-coming-soon {
+  display: inline;
+  margin-left: 0.5rem;
+  padding: 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #b8333d;
+  background: none;
+  border: none;
+  border-radius: 0;
+  vertical-align: baseline;
+}
+
+[data-theme="professional"] .work-services {
+  color: #5a5a5a;
+  font-style: italic;
+  font-size: 0.82rem;
+  margin: 0.15rem 0 0.4rem 0;
+  line-height: 1.4;
+}
+
+[data-theme="professional"] .work-description {
+  color: #333333;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  [data-theme="professional"] .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Skills (two-column bullet list) ---------- */
+[data-theme="professional"] .skills-section {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: transparent;
+  text-align: left;
+}
+
+[data-theme="professional"] .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+[data-theme="professional"] .skill-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0 0 0 1rem;
+  margin: 0;
+  position: relative;
+  animation: none;
+  opacity: 1;
+  transform: none;
+  text-align: left;
+  line-height: 1.45;
+  transition: none;
+}
+
+[data-theme="professional"] .skill-card:hover {
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+[data-theme="professional"] .skill-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  background: #b8333d;
+  border-radius: 50%;
+}
+
+[data-theme="professional"] .skill-card h3 {
+  color: #1a1a1a;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin: 0;
+  display: inline;
+  text-shadow: none;
+}
+
+[data-theme="professional"] .skill-card h3::after {
+  content: " - ";
+  color: #5a5a5a;
+  font-weight: 400;
+}
+
+[data-theme="professional"] .skill-card p {
+  color: #5a5a5a;
+  font-size: 0.85rem;
+  margin: 0;
+  display: inline;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  [data-theme="professional"] .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Contact ---------- */
+[data-theme="professional"] .contact-section {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  background: transparent;
+}
+
+[data-theme="professional"] .contact-form {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+[data-theme="professional"] .contact-input,
+[data-theme="professional"] .contact-textarea {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+[data-theme="professional"] .contact-textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+[data-theme="professional"] .contact-input::placeholder,
+[data-theme="professional"] .contact-textarea::placeholder {
+  color: #9a9a9a;
+  text-shadow: none;
+}
+
+[data-theme="professional"] .contact-input:focus,
+[data-theme="professional"] .contact-textarea:focus {
+  outline: none;
+  border-color: #b8333d;
+  box-shadow: 0 0 0 3px rgba(184, 51, 61, 0.12);
+}
+
+[data-theme="professional"] .contact-button {
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-start;
+  border-radius: 4px;
+  box-shadow: none;
+  text-shadow: none;
+  transition: background 0.2s ease;
+}
+
+[data-theme="professional"] .contact-button:hover {
+  background: #b8333d;
+  color: #ffffff;
+  transform: none;
+  box-shadow: none;
+}
+
+[data-theme="professional"] .contact-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+[data-theme="professional"] .contact-icon {
+  filter: none;
+}
+
+[data-theme="professional"] .contact-icon svg {
+  fill: #1a1a1a;
+  transition: fill 0.2s ease;
+}
+
+[data-theme="professional"] .contact-icon:hover svg {
+  fill: #b8333d;
+}
+
+/* ---------- Theme toggle (override accent so it sits on white nicely) ---------- */
+[data-theme="professional"] .theme-toggle {
+  color: #1a1a1a;
+  background: #ffffff;
+  border-color: #1a1a1a;
+  box-shadow: none;
+}
+
+[data-theme="professional"] .theme-toggle:hover:not(:disabled) {
+  background: #1a1a1a;
+  color: #ffffff;
+  box-shadow: none;
+}

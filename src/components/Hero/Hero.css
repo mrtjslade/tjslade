@@ -4,8 +4,10 @@
   position: relative;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 /* Main hero heading text */
@@ -15,4 +17,18 @@
   color: var(--color-gold);
   z-index: 10;
   text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+  margin: 0;
+}
+
+/* Space-mode subtitle */
+.hero-subtitle-space {
+  font-family: var(--font-body);
+  color: var(--color-gold);
+  font-size: var(--fs-md);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.55);
+  margin: var(--space-xs) auto 0;
+  max-width: 640px;
+  z-index: 10;
+  opacity: 0.9;
 }

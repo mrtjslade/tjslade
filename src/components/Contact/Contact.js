@@ -1,10 +1,22 @@
 import "./Contact.css";
+import { useTheme } from "../../context/ThemeContext";
+import DecodeText from "../DecodeText/DecodeText";
+import Reveal from "../Reveal/Reveal";
 
 function Contact() {
+  const { mode } = useTheme();
+  const isPro = mode === "professional";
+  const title = isPro ? "CONTACT" : "TRANSMISSIONS";
+
   return (
     <section id="contact" className="contact-section">
-      <h2 className="contact-title">CONTACT</h2>
+      <Reveal>
+        <h2 className="contact-title">
+          {isPro ? title : <DecodeText>{title}</DecodeText>}
+        </h2>
+      </Reveal>
 
+      <Reveal delay={120}>
       <form
         className="contact-form"
         action="https://formsubmit.co/mrtjslade@gmail.com"
@@ -42,10 +54,16 @@ function Contact() {
         ></textarea>
 
         <button type="submit" className="contact-button">
-          SEND TRANSMISSION
+          {isPro ? (
+            "Send"
+          ) : (
+            <DecodeText stagger={25}>SEND TRANSMISSION</DecodeText>
+          )}
         </button>
       </form>
+      </Reveal>
 
+      <Reveal delay={200}>
       <div className="contact-links">
         <a
           href="https://www.linkedin.com/in/mrtjslade"
@@ -83,6 +101,7 @@ function Contact() {
           </svg>
         </a>
       </div>
+      </Reveal>
     </section>
   );
 }
