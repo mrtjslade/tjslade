@@ -97,9 +97,32 @@
 }
 
 .theme-toggle:hover:not(:disabled) .theme-toggle-hint,
-.theme-toggle:focus-visible:not(:disabled) .theme-toggle-hint {
+.theme-toggle:focus-visible:not(:disabled) .theme-toggle-hint,
+.theme-toggle.is-armed .theme-toggle-hint {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Armed state: subtle pulse on the button itself so the user notices the change */
+.theme-toggle.is-armed {
+  box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.25);
+  border-color: #ff3333;
+  animation: armPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes armPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 51, 51, 0.15);
+  }
+}
+
+[data-theme="professional"] .theme-toggle.is-armed {
+  border-color: #b8333d;
+  box-shadow: 0 0 0 3px rgba(184, 51, 61, 0.25);
 }
 
 [data-theme="professional"] .theme-toggle-hint {

@@ -22,12 +22,12 @@
 
 /* Space-mode subtitle */
 .hero-subtitle-space {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-gold);
-  font-size: var(--fs-md);
-  letter-spacing: 1px;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  letter-spacing: 3px;
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.55);
-  margin: var(--space-xs) auto 0;
+  margin: var(--space-sm) auto 0;
   max-width: 640px;
   z-index: 10;
   opacity: 0.9;
