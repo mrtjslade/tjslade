@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "Blue Valley Timing",
+    services:
+      "Custom Web App, Live Results Platform, Real-Time Data, Historical Archive, Hosting",
+    description:
+      "A custom live timing and results platform for Blue Valley track meets, featuring real-time event coverage, a meet day live banner, and a searchable archive of historical results. Built for speed and clarity so athletes, coaches, and spectators can follow every heat as it unfolds.",
+    spaceDescription:
+      "Custom live timing and results dispatch for Blue Valley track meets, featuring real-time event coverage, a meet day live banner, and a searchable archive of historical race telemetry. Built for speed and clarity so athletes, coaches, and spectators can track every heat across the sector as it unfolds.",
+    url: "https://bluevalleytiming.com",
+  },
+  {
     title: "Dr. Zoe Ross-Nash",
     services:
       "New Website, Custom Plugin Development, API Integrations, Hosting, Ongoing Maintenance",
