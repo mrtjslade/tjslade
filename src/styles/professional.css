@@ -433,6 +433,20 @@
   box-shadow: none;
 }
 
+[data-theme="professional"] .contact-status {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  text-shadow: none;
+}
+
+[data-theme="professional"] .contact-status-success {
+  color: #2e7d32;
+}
+
+[data-theme="professional"] .contact-status-error {
+  color: #b8333d;
+}
+
 [data-theme="professional"] .contact-links {
   display: flex;
   gap: 1rem;

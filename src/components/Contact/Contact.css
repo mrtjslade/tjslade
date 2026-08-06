@@ -70,6 +70,37 @@
   background: var(--color-red);
 }
 
+/* Honeypot field: hidden from real visitors, bait for spam bots */
+.contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Submission status message */
+.contact-status {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-base);
+}
+
+.contact-status-success {
+  color: var(--color-gold);
+}
+
+.contact-status-error {
+  color: var(--color-red);
+}
+
+/* Disabled button while sending */
+.contact-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
 /* Social links row */
 .contact-links {
   margin-top: var(--space-lg);

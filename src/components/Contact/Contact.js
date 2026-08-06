@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Contact.css";
 import { useTheme } from "../../context/ThemeContext";
 import DecodeText from "../DecodeText/DecodeText";
@@ -7,6 +8,33 @@ function Contact() {
   const { mode } = useTheme();
   const isPro = mode === "professional";
   const title = isPro ? "CONTACT" : "TRANSMISSIONS";
+  const [status, setStatus] = useState("idle");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (status === "sending") return;
+    setStatus("sending");
+
+    const form = e.target;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("send failed");
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  const buttonLabel = status === "sending" ? "Sending..." : "Send";
+  const spaceButtonLabel =
+    status === "sending" ? "TRANSMITTING..." : "SEND TRANSMISSION";
 
   return (
     <section id="contact" className="contact-section">
@@ -17,17 +45,14 @@ function Contact() {
       </Reveal>
 
       <Reveal delay={120}>
-      <form
-        className="contact-form"
-        action="https://formsubmit.co/mrtjslade@gmail.com"
-        method="POST"
-      >
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
+      <form className="contact-form" onSubmit={handleSubmit}>
         <input
-          type="hidden"
-          name="_subject"
-          value="New Portfolio Contact Message!"
+          type="text"
+          name="company"
+          className="contact-honeypot"
+          tabIndex="-1"
+          autoComplete="off"
+          aria-hidden="true"
         />
 
         <input
@@ -53,13 +78,32 @@ function Contact() {
           required
         ></textarea>
 
-        <button type="submit" className="contact-button">
+        <button
+          type="submit"
+          className="contact-button"
+          disabled={status === "sending"}
+        >
           {isPro ? (
-            "Send"
+            buttonLabel
           ) : (
-            <DecodeText stagger={25}>SEND TRANSMISSION</DecodeText>
+            <DecodeText stagger={25}>{spaceButtonLabel}</DecodeText>
           )}
         </button>
+
+        {status === "success" && (
+          <p className="contact-status contact-status-success" role="status">
+            {isPro
+              ? "Message sent. I'll get back to you soon."
+              : "TRANSMISSION RECEIVED. STAND BY FOR RESPONSE."}
+          </p>
+        )}
+        {status === "error" && (
+          <p className="contact-status contact-status-error" role="alert">
+            {isPro
+              ? "Something went wrong. Please try again or email me directly."
+              : "TRANSMISSION FAILED. RETRY OR USE ALTERNATE CHANNEL."}
+          </p>
+        )}
       </form>
       </Reveal>
 
