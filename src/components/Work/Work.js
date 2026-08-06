@@ -32,7 +32,11 @@ function Work() {
 
           return (
             <Reveal key={index} delay={(index % 8) * 60}>
-              <div className="work-card">
+              <div
+                className={
+                  "work-card" + (project.featured ? " work-card-featured" : "")
+                }
+              >
               {isPro && hasLink ? (
                 <a
                   href={project.url}

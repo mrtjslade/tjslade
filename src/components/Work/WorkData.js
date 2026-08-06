@@ -1,5 +1,16 @@
 export const projects = [
   {
+    title: "Solo Digital Design",
+    featured: true,
+    services:
+      "My Studio - Design, Development, API & Data Integrations, SEO, Hosting",
+    description:
+      "My own design and development studio, and the home base for all of the work below. Solo Digital Design delivers full service web design, development, hosting, SEO, and ongoing maintenance for small businesses, nonprofits, and health professionals.",
+    spaceDescription:
+      "Command base for every mission below. Solo Digital Design delivers full service design, development, hosting, SEO, and ongoing support for small businesses, nonprofits, and health professionals across the sector.",
+    url: "https://solodigitaldesign.com",
+  },
+  {
     title: "Blue Valley Timing",
     services:
       "Custom Web App, Live Results Platform, Real-Time Data Pipeline, Historical Archive, Hosting",

@@ -198,6 +198,11 @@
   border-color: #d0d0d0;
 }
 
+[data-theme="professional"] .work-card-featured {
+  grid-column: 1 / -1;
+  border-left: 3px solid #b8333d;
+}
+
 [data-theme="professional"] .work-card::before {
   content: none;
 }
