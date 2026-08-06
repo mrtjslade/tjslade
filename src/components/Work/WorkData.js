@@ -27,8 +27,7 @@ export const projects = [
       "A complete platform overhaul for a Pilates studio combining a subscription based video library, e-commerce, and live class ticketing. Integrated the Stripe API for recurring payments, the Vimeo API for the gated video library, and the Zoom API for class scheduling and attendance.",
     spaceDescription:
       "Total platform overhaul for a training facility combining a subscription based video library, e-commerce, and live class ticketing. Integrated the Stripe API for recurring payments, the Vimeo API for the gated video library, and the Zoom API for class scheduling and attendance.",
-    url: null,
-    comingSoon: true,
+    url: "https://kathrynrossnash.com",
   },
   {
     title: "Lucky Finn Designs",
