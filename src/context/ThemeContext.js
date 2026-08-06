@@ -1,5 +1,6 @@
 import {
   createContext,
+  startTransition,
   useCallback,
   useContext,
   useEffect,
@@ -30,12 +31,17 @@ export function ThemeProvider({ children }) {
   }, []);
 
   const swapMode = useCallback(() => {
-    setMode((prev) => {
-      const next = prev === "space" ? "professional" : "space";
-      try {
-        window.localStorage.setItem(STORAGE_KEY, next);
-      } catch (_) {}
-      return next;
+    // Mark the heavy theme swap (mounting StarsBackground, HUD navbar, ~1000
+    // DecodeText spans) as a non-urgent update so it yields to the hyperspace
+    // canvas animation instead of blocking the main thread.
+    startTransition(() => {
+      setMode((prev) => {
+        const next = prev === "space" ? "professional" : "space";
+        try {
+          window.localStorage.setItem(STORAGE_KEY, next);
+        } catch (_) {}
+        return next;
+      });
     });
   }, []);
 
