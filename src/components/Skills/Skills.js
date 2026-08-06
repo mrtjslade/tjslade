@@ -51,8 +51,13 @@ const skills = [
   },
   {
     name: "Python Development",
-    pro: "Automation tools, scripts, workflow systems.",
-    space: "Droid-grade automation, scripts, workflow engineering.",
+    pro: "Automation, data sync tools, scripts, workflow systems.",
+    space: "Droid-grade automation, data relays, workflow engineering.",
+  },
+  {
+    name: "APIs and Data Integration",
+    pro: "REST APIs, Stripe, Square, Vimeo, Zoom, real-time data sync.",
+    space: "Comm relays, credit systems, and live telemetry feeds.",
   },
   {
     name: "UI and Graphic Design",
@@ -63,6 +68,11 @@ const skills = [
     name: "Hosting and Workspace",
     pro: "Server setup, email configuration, maintenance.",
     space: "Server deployment, comm routing, infrastructure upkeep.",
+  },
+  {
+    name: "SEO and Analytics",
+    pro: "Technical SEO, local search, indexing, traffic analytics.",
+    space: "Sector-wide signal boosting and traffic telemetry.",
   },
 ];
 

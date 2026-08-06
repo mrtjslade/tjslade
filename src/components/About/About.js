@@ -31,9 +31,11 @@ function About() {
               <p className="about-text">
                 My work spans the full stack of front end engineering:
                 JavaScript and ES6, React component architecture, Next.js
-                applications, custom WordPress themes and plugins, and the
-                backend logic that ties it all together with PHP, Node, and
-                Python automation.
+                applications, and custom WordPress themes and plugins. Behind
+                the interface I build the data layer that ties it all
+                together: PHP, Node, and Python automation, REST API
+                integrations, and real-time data pipelines that keep content,
+                inventory, and payments in sync across systems.
               </p>
             </Reveal>
 
@@ -43,7 +45,8 @@ function About() {
                 digital presence: design, development, hosting, Google
                 Workspace, SEO, and ongoing maintenance. From small business
                 landing pages to large scale subscription platforms, I build
-                systems that are easy to operate and built to last.
+                scalable, reliable systems that are easy to operate, simple to
+                monitor, and built to last.
               </p>
             </Reveal>
           </>

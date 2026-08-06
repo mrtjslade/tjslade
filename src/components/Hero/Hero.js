@@ -14,7 +14,7 @@ function Hero() {
       {isPro ? (
         <p className="hero-subtitle">
           Web developer building modern client sites with React, Next.js, and
-          WordPress.
+          WordPress, plus the APIs and data pipelines behind them.
         </p>
       ) : (
         <p className="hero-subtitle hero-subtitle-space">

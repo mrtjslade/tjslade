@@ -2,60 +2,22 @@ export const projects = [
   {
     title: "Blue Valley Timing",
     services:
-      "Custom Web App, Live Results Platform, Real-Time Data, Historical Archive, Hosting",
+      "Custom Web App, Live Results Platform, Real-Time Data Pipeline, Historical Archive, Hosting",
     description:
-      "A custom live timing and results platform for Blue Valley track meets, featuring real-time event coverage, a meet day live banner, and a searchable archive of historical results. Built for speed and clarity so athletes, coaches, and spectators can follow every heat as it unfolds.",
+      "A custom live timing and results platform for Blue Valley track meets, built on a real-time data pipeline that moves results from the track to the browser as each event unfolds, with a meet day live banner and a searchable archive of historical results data. Built for speed and clarity so athletes, coaches, and spectators can follow every heat.",
     spaceDescription:
       "Custom live timing and results dispatch for Blue Valley track meets, featuring real-time event coverage, a meet day live banner, and a searchable archive of historical race telemetry. Built for speed and clarity so athletes, coaches, and spectators can track every heat across the sector as it unfolds.",
     url: "https://bluevalleytiming.com",
   },
   {
-    title: "Dr. Zoe Ross-Nash",
+    title: "Society for the Advancement of Psychotherapy",
     services:
-      "New Website, Custom Plugin Development, API Integrations, Hosting, Ongoing Maintenance",
+      "React Rebuild, Headless WordPress, Custom Plugin Development, Google Workspace, Ongoing Maintenance",
     description:
-      "A professional practice site featuring custom WordPress plugin development that pulls live Google Places API reviews and an Instagram Graph API feed directly onto the page. Delivered end to end through design, development, managed hosting, and ongoing maintenance.",
+      "A complete platform overhaul for a global academic organization, replacing a legacy WordPress site with a custom React frontend backed by a headless WordPress CMS. Includes custom plugin development for editorial workflows, Google Workspace integration, and ongoing maintenance for sustained operation.",
     spaceDescription:
-      "Professional practice site rigged with a custom plugin that streams live Google Places reviews and an Instagram Graph feed straight onto the dashboard. Delivered end to end through design, development, managed hosting, and ongoing maintenance from a single command station.",
-    url: "https://drzoerossnash.com",
-  },
-  {
-    title: "ENFS Design Studio",
-    services: "Design, New Website, Hosting",
-    description:
-      "A modern design studio portfolio built to highlight creative work with clean typography, a responsive image grid, and fast page loads. Delivered through full design and development phases with managed hosting for reliable client presentation.",
-    spaceDescription:
-      "Modern design bureau portfolio built to highlight creative work with clean typography, a responsive image grid, and fast loading transmissions. Delivered through full design and development cycles with managed hosting for reliable client presentation across the sector.",
-    url: "https://enfsdesignstudio.com",
-  },
-  {
-    title: "Eylar Insurance Solutions",
-    services:
-      "New Website, Custom Form Development, Google Workspace, Email Hosting, Hosting",
-    description:
-      "A trust focused insurance site built to communicate coverage clearly and capture qualified leads through custom intake forms with intelligent routing. Paired with Google Workspace integration for unified email infrastructure and team collaboration across the business.",
-    spaceDescription:
-      "Trust grade insurance dispatch built to communicate coverage clearly and capture qualified leads through custom intake forms with intelligent routing. Reinforced with Google Workspace integration for unified comm channels and team collaboration across the operation.",
-    url: "https://eylarinssolutions.com",
-  },
-  {
-    title: "Headed North Foundation",
-    services:
-      "New Website, Custom Form Development, Hosting, Ongoing Maintenance",
-    description:
-      "A nonprofit foundation site built around clear mission communication and conversion focused calls to action, with custom form development handling both student applications and donation flows. Supported by ongoing maintenance and managed hosting for sustained operation.",
-    spaceDescription:
-      "Nonprofit relief operation site built around clear mission communication and conversion focused calls to action, with custom form development handling both applications and donation flows. Supported by ongoing maintenance and managed hosting for sustained operation across the sector.",
-    url: "https://headednorth.org",
-  },
-  {
-    title: "Jana Koehn Photography",
-    services: "Design, New Website, Hosting",
-    description:
-      "A photography portfolio site built to showcase galleries with fast loading optimized imagery and responsive layouts that hold their composition on every screen. Delivered through full design and development phases with managed hosting and a clean booking inquiry path.",
-    spaceDescription:
-      "Holographic portfolio interface built to showcase galleries with fast loading optimized imagery and responsive layouts that hold their composition on every screen. Delivered through full design and development cycles with managed hosting and a clean booking transmission path.",
-    url: "https://janakoehnphotos.com",
+      "Total platform overhaul for a global academic organization, replacing a legacy WordPress system with a custom React frontend backed by a headless WordPress CMS. Includes custom plugin development for editorial workflows, Google Workspace integration, and ongoing maintenance for sustained operation.",
+    url: "https://societyforpsychotherapy.org",
   },
   {
     title: "KRN NY Pilates",
@@ -71,12 +33,42 @@ export const projects = [
   {
     title: "Lucky Finn Designs",
     services:
-      "New Website, E-Commerce, Square Payments API, Custom Python Inventory App, Hosting",
+      "New Website, E-Commerce, Square Payments API, Custom Python Inventory App, Real-Time Data Sync, Hosting",
     description:
-      "A fully branded online storefront for embroidered apparel built around the Square Payments API with custom variation logic for personalization. Paired with a custom Python application that lets the owner manage inventory and sync stock levels with the storefront in real time.",
+      "A fully branded online storefront for embroidered apparel built around the Square Payments API with custom variation logic for personalization. Paired with a custom Python application that manages inventory and syncs stock data between the owner's system and the storefront in real time.",
     spaceDescription:
       "Fully branded online storefront for embroidered apparel built around the Square Payments API with custom variation logic for personalization. Reinforced with a custom Python application that lets the owner manage inventory and sync stock levels with the storefront in real time.",
     url: "https://luckyfinndesigns.com",
+  },
+  {
+    title: "Dr. Zoe Ross-Nash",
+    services:
+      "New Website, Custom Plugin Development, API Integrations, Hosting, Ongoing Maintenance",
+    description:
+      "A professional practice site featuring custom WordPress plugin development that pulls live Google Places API reviews and an Instagram Graph API feed directly onto the page. Delivered end to end through design, development, managed hosting, and ongoing maintenance.",
+    spaceDescription:
+      "Professional practice site rigged with a custom plugin that streams live Google Places reviews and an Instagram Graph feed straight onto the dashboard. Delivered end to end through design, development, managed hosting, and ongoing maintenance from a single command station.",
+    url: "https://drzoerossnash.com",
+  },
+  {
+    title: "Eylar Insurance Solutions",
+    services:
+      "New Website, Custom Form Development, Google Workspace, Email Hosting, Hosting",
+    description:
+      "A trust focused insurance site built to communicate coverage clearly and capture qualified leads through custom intake forms with intelligent routing. Paired with Google Workspace integration for unified email infrastructure and team collaboration across the business.",
+    spaceDescription:
+      "Trust grade insurance dispatch built to communicate coverage clearly and capture qualified leads through custom intake forms with intelligent routing. Reinforced with Google Workspace integration for unified comm channels and team collaboration across the operation.",
+    url: "https://eylarinssolutions.com",
+  },
+  {
+    title: "Turner Uni Drive",
+    services:
+      "Website Rebuild, Site Consolidation, Google Workspace, Local SEO, SEO Sanitation, Ongoing Maintenance",
+    description:
+      "A complete site rebuild that consolidated a bloated legacy presence into a focused, streamlined experience with narrowed navigation and a clearer information hierarchy. Reinforced with local SEO, SEO sanitation, Google Workspace integration, and ongoing maintenance for long term performance.",
+    spaceDescription:
+      "Complete site rebuild that consolidated a bloated legacy presence into a focused, streamlined cockpit with narrowed navigation and a clearer information hierarchy. Reinforced with local SEO, SEO sanitation, Google Workspace integration, and ongoing maintenance for long term performance.",
+    url: "https://turnerunidrive.com",
   },
   {
     title: "Per Aspera Strength",
@@ -89,6 +81,36 @@ export const projects = [
     url: "https://perasperastrength.com",
   },
   {
+    title: "Headed North Foundation",
+    services:
+      "New Website, Custom Form Development, Hosting, Ongoing Maintenance",
+    description:
+      "A nonprofit foundation site built around clear mission communication and conversion focused calls to action, with custom form development handling both student applications and donation flows. Supported by ongoing maintenance and managed hosting for sustained operation.",
+    spaceDescription:
+      "Nonprofit relief operation site built around clear mission communication and conversion focused calls to action, with custom form development handling both applications and donation flows. Supported by ongoing maintenance and managed hosting for sustained operation across the sector.",
+    url: "https://headednorth.org",
+  },
+  {
+    title: "Wichita Vault Academy",
+    services:
+      "New Website, E-Commerce, Google Workspace, Hosting, Ongoing Maintenance",
+    description:
+      "An athletics focused informational site for vault programs featuring e-commerce for program registration, mobile first navigation, and content structure built around active program seasons. Supported by ongoing maintenance and content updates to keep program information current.",
+    spaceDescription:
+      "Athletics training facility informational site featuring e-commerce for program registration, mobile first navigation, and content structure built around active program seasons. Supported by ongoing maintenance and content updates to keep program information current across the cycle.",
+    url: "https://wichitavaultacademy.com",
+  },
+  {
+    title: "Zephyr Products",
+    services:
+      "Custom Page Development, Custom Form Development, Local SEO, SEO Sanitation",
+    description:
+      "Custom page development and form engineering for a large scale manufacturing company, including dedicated landing pages for product lines and lead capture forms tuned for sales follow up. Paired with SEO cleanup and local search optimization for indexing and reach.",
+    spaceDescription:
+      "Custom page development and form engineering for a large scale manufacturing outpost, including dedicated landing pages for product lines and lead capture forms tuned for sales follow up. Reinforced with SEO cleanup and local search optimization for indexing and reach.",
+    url: "https://zpi.com",
+  },
+  {
     title: "Right Start Fitness",
     services:
       "Website Redesign, Google Workspace, SEO Sanitation, Hosting, Ongoing Maintenance",
@@ -97,16 +119,6 @@ export const projects = [
     spaceDescription:
       "Combat conditioning facility site redesigned with structured service breakdowns, program detail pages, and Google Workspace email routing for streamlined operations. Reinforced with SEO sanitation, managed hosting, and ongoing maintenance to support sustained program growth across the sector.",
     url: "https://rightstartfitness.org",
-  },
-  {
-    title: "Society for the Advancement of Psychotherapy",
-    services:
-      "React Rebuild, Headless WordPress, Custom Plugin Development, Google Workspace, Ongoing Maintenance",
-    description:
-      "A complete platform overhaul for a global academic organization, replacing a legacy WordPress site with a custom React frontend backed by a headless WordPress CMS. Includes custom plugin development for editorial workflows, Google Workspace integration, and ongoing maintenance for sustained operation.",
-    spaceDescription:
-      "Total platform overhaul for a global academic organization, replacing a legacy WordPress system with a custom React frontend backed by a headless WordPress CMS. Includes custom plugin development for editorial workflows, Google Workspace integration, and ongoing maintenance for sustained operation.",
-    url: "https://societyforpsychotherapy.org",
   },
   {
     title: "Tarry Chiropractic",
@@ -128,33 +140,21 @@ export const projects = [
     url: "https://trumanchiropractic.com",
   },
   {
-    title: "Turner Uni Drive",
-    services:
-      "Website Rebuild, Site Consolidation, Google Workspace, Local SEO, SEO Sanitation, Ongoing Maintenance",
+    title: "Jana Koehn Photography",
+    services: "Design, New Website, Hosting",
     description:
-      "A complete site rebuild that consolidated a bloated legacy presence into a focused, streamlined experience with narrowed navigation and a clearer information hierarchy. Reinforced with local SEO, SEO sanitation, Google Workspace integration, and ongoing maintenance for long term performance.",
+      "A photography portfolio site built to showcase galleries with fast loading optimized imagery and responsive layouts that hold their composition on every screen. Delivered through full design and development phases with managed hosting and a clean booking inquiry path.",
     spaceDescription:
-      "Complete site rebuild that consolidated a bloated legacy presence into a focused, streamlined cockpit with narrowed navigation and a clearer information hierarchy. Reinforced with local SEO, SEO sanitation, Google Workspace integration, and ongoing maintenance for long term performance.",
-    url: "https://turnerunidrive.com",
+      "Holographic portfolio interface built to showcase galleries with fast loading optimized imagery and responsive layouts that hold their composition on every screen. Delivered through full design and development cycles with managed hosting and a clean booking transmission path.",
+    url: "https://janakoehnphotos.com",
   },
   {
-    title: "Wichita Vault Academy",
-    services:
-      "New Website, E-Commerce, Google Workspace, Hosting, Ongoing Maintenance",
+    title: "ENFS Design Studio",
+    services: "Design, New Website, Hosting",
     description:
-      "An athletics focused informational site for vault programs featuring e-commerce for program registration, mobile first navigation, and content structure built around active program seasons. Supported by ongoing maintenance and content updates to keep program information current.",
+      "A modern design studio portfolio built to highlight creative work with clean typography, a responsive image grid, and fast page loads. Delivered through full design and development phases with managed hosting for reliable client presentation.",
     spaceDescription:
-      "Athletics training facility informational site featuring e-commerce for program registration, mobile first navigation, and content structure built around active program seasons. Supported by ongoing maintenance and content updates to keep program information current across the cycle.",
-    url: "https://wichitavaultacademy.com",
-  },
-  {
-    title: "Zephyr Products",
-    services:
-      "Custom Page Development, Custom Form Development, Local SEO, SEO Sanitation",
-    description:
-      "Custom page development and form engineering for a large scale manufacturing company, including dedicated landing pages for product lines and lead capture forms tuned for sales follow up. Paired with SEO cleanup and local search optimization for indexing and reach.",
-    spaceDescription:
-      "Custom page development and form engineering for a large scale manufacturing outpost, including dedicated landing pages for product lines and lead capture forms tuned for sales follow up. Reinforced with SEO cleanup and local search optimization for indexing and reach.",
-    url: "https://zpi.com",
+      "Modern design bureau portfolio built to highlight creative work with clean typography, a responsive image grid, and fast loading transmissions. Delivered through full design and development cycles with managed hosting for reliable client presentation across the sector.",
+    url: "https://enfsdesignstudio.com",
   },
 ];
