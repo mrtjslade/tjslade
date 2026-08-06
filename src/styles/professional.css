@@ -200,7 +200,25 @@
 
 [data-theme="professional"] .work-card-featured {
   grid-column: 1 / -1;
-  border-left: 3px solid #b8333d;
+  border: 2px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(120deg, #b8333d, #f0d5d7, #1a1a1a, #b8333d) border-box;
+  background-size: 100% 100%, 300% 100%;
+  animation: featured-border-pan 8s linear infinite;
+}
+
+[data-theme="professional"] .work-card-featured:hover {
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes featured-border-pan {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+  100% {
+    background-position: 0 0, 300% 50%;
+  }
 }
 
 [data-theme="professional"] .work-card::before {
