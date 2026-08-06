@@ -60,6 +60,16 @@ const skills = [
     space: "Comm relays, credit systems, and live telemetry feeds.",
   },
   {
+    name: "SQL and Databases",
+    pro: "MySQL, WordPress data layer, queries, schema design.",
+    space: "Archive vault records, query protocols, structured data.",
+  },
+  {
+    name: "Data Pipelines and ETL",
+    pro: "Ingest, transform, and sync dataflows across systems.",
+    space: "Data cargo runs: extract, transform, deliver on schedule.",
+  },
+  {
     name: "UI and Graphic Design",
     pro: "Structure, branding, typography, accessibility.",
     space: "Branding, typography, accessibility, visual command.",
