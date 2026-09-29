@@ -22,3 +22,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# private notes (resume, job applications) - never commit, repo is public
+/private/

@@ -49,6 +49,15 @@ function About() {
                 monitor, and built to last.
               </p>
             </Reveal>
+
+            <Reveal delay={320}>
+              <p className="about-text">
+                I also build AI into how I work. Custom Claude agents handle
+                the repetitive parts of a project, like research, first drafts,
+                and QA checks, so more of my time goes to the design decisions,
+                client conversations, and careful code that need a person.
+              </p>
+            </Reveal>
           </>
         ) : (
           <>
@@ -73,6 +82,12 @@ function About() {
               to capital-ship-class subscription platforms, I build systems
               that operate effortlessly from the cockpit and hold up across
               the sector.
+            </p>
+
+            <p className="about-text">
+              I fly with a droid crew, too. Custom AI agents handle the routine
+              runs, like recon, first drafts, and systems checks, so the pilot
+              can focus on the calls that need a steady hand.
             </p>
           </>
         )}

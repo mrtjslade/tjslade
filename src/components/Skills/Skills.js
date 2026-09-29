@@ -35,9 +35,9 @@ const skills = [
     space: "Custom builds, content types, sector-scale architecture.",
   },
   {
-    name: "Custom Theme Building",
-    pro: "Advanced layouts, dynamic content, maintainable structure.",
-    space: "Bespoke layouts, dynamic content, mission-grade structure.",
+    name: "AI-Assisted Workflows",
+    pro: "Claude agents for the routine, human review for every call.",
+    space: "Droid crews for the routine. The pilot makes the calls.",
   },
   {
     name: "Plugin Extensions",

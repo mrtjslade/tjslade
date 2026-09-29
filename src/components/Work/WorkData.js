@@ -11,16 +11,6 @@ export const projects = [
     url: "https://solodigitaldesign.com",
   },
   {
-    title: "Blue Valley Timing",
-    services:
-      "Custom Web App, Live Results Platform, Real-Time Data Pipeline, Historical Archive, Hosting",
-    description:
-      "A custom live timing and results platform for Blue Valley track meets, built on a real-time data pipeline that moves results from the track to the browser as each event unfolds, with a meet day live banner and a searchable archive of historical results data. Built for speed and clarity so athletes, coaches, and spectators can follow every heat.",
-    spaceDescription:
-      "Custom live timing and results dispatch for Blue Valley track meets, featuring real-time event coverage, a meet day live banner, and a searchable archive of historical race telemetry. Built for speed and clarity so athletes, coaches, and spectators can track every heat across the sector as it unfolds.",
-    url: "https://bluevalleytiming.com",
-  },
-  {
     title: "Society for the Advancement of Psychotherapy",
     services:
       "React Rebuild, Headless WordPress, Custom Plugin Development, Google Workspace, Ongoing Maintenance",
@@ -49,6 +39,16 @@ export const projects = [
     spaceDescription:
       "Fully branded online storefront for embroidered apparel built around the Square Payments API with custom variation logic for personalization. Reinforced with a custom Python application that lets the owner manage inventory and sync stock levels with the storefront in real time.",
     url: "https://luckyfinndesigns.com",
+  },
+  {
+    title: "Twin Suns Gaming",
+    services:
+      "Next.js, MDX Publishing, AI-Assisted Editorial Workflow, Social Automation, Scheduled Jobs",
+    description:
+      "My own Star Wars gaming news and review site, built on Next.js with an MDX content system. AI agents handle research, first drafts, and scheduling under an editorial voice guide I wrote, while I set direction and review every piece. Automated scripts generate social graphics and video, post to X and Instagram, and check every embed before it publishes.",
+    spaceDescription:
+      "My own holonet news station covering Star Wars games, built on Next.js with an MDX content system. A droid crew handles recon, first drafts, and scheduling under a voice guide I wrote, while I set course and review every transmission. Automated relays generate graphics and video, broadcast to X and Instagram, and check every embed before launch.",
+    url: "https://twinsunsgaming.com",
   },
   {
     title: "Dr. Zoe Ross-Nash",
@@ -166,5 +166,15 @@ export const projects = [
     spaceDescription:
       "Modern design bureau portfolio built to highlight creative work with clean typography, a responsive image grid, and fast loading transmissions. Delivered through full design and development cycles with managed hosting for reliable client presentation across the sector.",
     url: "https://enfsdesignstudio.com",
+  },
+  {
+    title: "Blue Valley Timing",
+    services:
+      "Custom Web App, Live Results Platform, Real-Time Data Pipeline, Historical Archive, Hosting",
+    description:
+      "A custom live timing and results platform for Blue Valley track meets, built on a real-time data pipeline that moves results from the track to the browser as each event unfolds, with a meet day live banner and a searchable archive of historical results data. Built for speed and clarity so athletes, coaches, and spectators can follow every heat.",
+    spaceDescription:
+      "Custom live timing and results dispatch for Blue Valley track meets, featuring real-time event coverage, a meet day live banner, and a searchable archive of historical race telemetry. Built for speed and clarity so athletes, coaches, and spectators can track every heat across the sector as it unfolds.",
+    url: "https://bluevalleytiming.com",
   },
 ];
