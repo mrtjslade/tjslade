@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { flushSync } from "react-dom";
 
 const STORAGE_KEY = "tjslade-theme-mode";
 const ThemeContext = createContext(null);
@@ -26,9 +27,55 @@ export function ThemeProvider({ children }) {
     document.documentElement.dataset.theme = mode;
   }, [mode]);
 
-  const toggleMode = useCallback(() => {
-    setTransitioning((t) => (t ? t : true));
-  }, []);
+  const toggleMode = useCallback(
+    (origin) => {
+      // Leaving space mode: reveal the professional page in a circle that
+      // grows out of the toggle button. Browsers without the View Transitions
+      // API (or visitors who prefer reduced motion) keep the hyperspace jump.
+      const canReveal =
+        mode === "space" &&
+        origin &&
+        typeof document.startViewTransition === "function" &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!canReveal) {
+        setTransitioning((t) => (t ? t : true));
+        return;
+      }
+
+      const { x, y } = origin;
+      const radius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      const transition = document.startViewTransition(() => {
+        flushSync(() => setMode("professional"));
+        try {
+          window.localStorage.setItem(STORAGE_KEY, "professional");
+        } catch (_) {}
+      });
+
+      transition.ready.then(() => {
+        document.documentElement.animate(
+          {
+            clipPath: [
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${radius}px at ${x}px ${y}px)`,
+            ],
+          },
+          {
+            duration: 650,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            pseudoElement: "::view-transition-new(root)",
+          }
+        );
+      }).catch(() => {
+        // Transition skipped (e.g. tab in background); the mode still swaps.
+      });
+    },
+    [mode]
+  );
 
   const swapMode = useCallback(() => {
     // Mark the heavy theme swap (mounting StarsBackground, HUD navbar, ~1000

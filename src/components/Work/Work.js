@@ -4,6 +4,15 @@ import { useTheme } from "../../context/ThemeContext";
 import DecodeText from "../DecodeText/DecodeText";
 import Reveal from "../Reveal/Reveal";
 
+// Feeds the cursor position to the hovered card so its spotlight follows it.
+function trackSpotlight(e) {
+  const card = e.target.closest(".work-card");
+  if (!card) return;
+  const rect = card.getBoundingClientRect();
+  card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+  card.style.setProperty("--my", `${e.clientY - rect.top}px`);
+}
+
 function Work() {
   const { mode } = useTheme();
   const isPro = mode === "professional";
@@ -19,7 +28,10 @@ function Work() {
         </h2>
       </Reveal>
 
-      <div className="work-grid">
+      <div
+        className="work-grid"
+        onPointerMove={isPro ? trackSpotlight : undefined}
+      >
         {projects.map((project, index) => {
           const hasLink = Boolean(project.url) && !project.comingSoon;
           const description =

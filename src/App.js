@@ -11,6 +11,7 @@ import Contact from "./components/Contact/Contact";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import TranslateButton from "./components/TranslateButton/TranslateButton";
 import Hyperspace from "./components/Hyperspace/Hyperspace";
+import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
 
 function AppContent() {
   const { mode, transitioning, swapMode, finishTransition } = useTheme();
@@ -18,6 +19,7 @@ function AppContent() {
   return (
     <>
       {mode === "space" && <StarsBackground />}
+      {mode === "professional" && <ScrollProgress />}
       <Hero />
       <Navbar />
       <About />

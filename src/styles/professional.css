@@ -74,11 +74,64 @@
   }
 }
 
+/* Word-by-word reveal: each word slides up from behind its own mask. */
+[data-theme="professional"] .hero-text-masked,
+[data-theme="professional"] .hero-subtitle-masked {
+  animation: none;
+}
+
+[data-theme="professional"] .word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* room for descenders so the mask doesn't clip them */
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+[data-theme="professional"] .word {
+  display: inline-block;
+  transform: translateY(105%);
+  animation: wordUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i) * 45ms + 80ms);
+}
+
+@keyframes wordUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-theme="professional"] .hero-text,
   [data-theme="professional"] .hero-subtitle {
     animation: none;
   }
+
+  [data-theme="professional"] .word {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Circular reveal when switching back from space mode (see ThemeContext).
+   Turn off the default crossfade so only the clip-path animation shows. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 /* ---------- Navbar (pro variant already minimal; refine spacing) ---------- */
@@ -93,8 +146,31 @@
   color: #333333;
 }
 
-[data-theme="professional"] .nav-links-pro a:hover {
+[data-theme="professional"] .nav-links-pro a:hover,
+[data-theme="professional"] .nav-links-pro a.is-active {
   color: #b8333d;
+}
+
+/* Sliding accent bar that tracks the section in view */
+[data-theme="professional"] .nav-links-pro {
+  position: relative;
+}
+
+[data-theme="professional"] .nav-pro-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  background: #b8333d;
+  pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="professional"] .nav-pro-indicator {
+    transition: none;
+  }
 }
 
 /* ---------- Shared section title style (resume header) ---------- */
@@ -225,6 +301,28 @@
   content: none;
 }
 
+/* Soft spotlight that follows the cursor across a card (see Work.js) */
+[data-theme="professional"] .work-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    280px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(184, 51, 61, 0.07),
+    transparent 70%
+  );
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  [data-theme="professional"] .work-card:hover::after {
+    opacity: 1;
+  }
+}
+
 [data-theme="professional"] .work-header {
   display: flex;
   align-items: center;
@@ -344,6 +442,11 @@
   height: 5px;
   background: #b8333d;
   border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+[data-theme="professional"] .skill-card:hover::before {
+  transform: scale(1.8);
 }
 
 [data-theme="professional"] .skill-card h3 {

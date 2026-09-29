@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import { useTheme } from "../../context/ThemeContext";
 import DecodeText from "../DecodeText/DecodeText";
@@ -14,6 +14,60 @@ function HudCounter() {
   }, []);
 
   return <div className="hud-counter">{String(count).padStart(5, "0")}</div>;
+}
+
+// Pro sidebar links with an accent bar that slides to the section in view.
+function ProNavLinks({ links }) {
+  const [active, setActive] = useState(null);
+  const [bar, setBar] = useState(null);
+  const linkRefs = useRef({});
+
+  useEffect(() => {
+    const sections = links
+      .map((link) => document.querySelector(link.href))
+      .filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [links]);
+
+  useEffect(() => {
+    const el = active && linkRefs.current[active];
+    setBar(el ? { top: el.offsetTop, height: el.offsetHeight } : null);
+  }, [active]);
+
+  return (
+    <ul className="nav-links nav-links-pro">
+      {links.map((link) => (
+        <li key={link.href}>
+          <a
+            href={link.href}
+            ref={(el) => (linkRefs.current[link.href] = el)}
+            className={active === link.href ? "is-active" : undefined}
+            aria-current={active === link.href ? "true" : undefined}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <span
+        className="nav-pro-indicator"
+        aria-hidden="true"
+        style={
+          bar
+            ? { transform: `translateY(${bar.top}px)`, height: bar.height, opacity: 1 }
+            : { opacity: 0 }
+        }
+      />
+    </ul>
+  );
 }
 
 function Navbar() {
@@ -102,13 +156,7 @@ function Navbar() {
           className="navbar navbar-pro navbar-pro-desktop"
           aria-label="Primary"
         >
-          <ul className="nav-links nav-links-pro">
-            {proLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
-              </li>
-            ))}
-          </ul>
+          <ProNavLinks links={proLinks} />
         </nav>
       </>
     );

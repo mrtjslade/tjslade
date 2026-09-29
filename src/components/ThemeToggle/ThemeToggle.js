@@ -25,12 +25,18 @@ function ThemeToggle() {
   const isSpace = mode === "space";
   const nextLabel = isSpace ? "Professional Mode" : "Space Mode";
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     if (transitioning) return;
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const origin = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    };
 
     // Hover-capable devices: direct toggle
     if (!isTouch.current) {
-      toggleMode();
+      toggleMode(origin);
       return;
     }
 
@@ -38,7 +44,7 @@ function ThemeToggle() {
     if (armed) {
       if (armTimer.current) clearTimeout(armTimer.current);
       setArmed(false);
-      toggleMode();
+      toggleMode(origin);
       return;
     }
 
