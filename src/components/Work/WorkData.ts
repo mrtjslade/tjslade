@@ -1,4 +1,14 @@
-export const projects = [
+export type Project = {
+  title: string;
+  services: string;
+  description: string;
+  spaceDescription?: string;
+  url?: string;
+  featured?: boolean;
+  comingSoon?: boolean;
+};
+
+export const projects: Project[] = [
   {
     title: "Solo Digital Design",
     featured: true,
@@ -9,6 +19,36 @@ export const projects = [
     spaceDescription:
       "Command base for every mission below. Solo Digital Design delivers full service design, development, hosting, SEO, and ongoing support for small businesses, nonprofits, and health professionals across the sector.",
     url: "https://solodigitaldesign.com",
+  },
+  {
+    title: "Spot in Heaven",
+    services:
+      "Brand & Logo, Next.js E-Commerce, Stripe API, PDF Generation, Photo Uploads, Order Admin",
+    description:
+      "A brand and storefront built from scratch for a business that registers a spot in heaven and delivers it as a personalized certificate and deed. Customers personalize their order and pay through Stripe, then a custom pipeline renders their documents as PDFs, stores uploaded photos, and emails the finished deed, with an admin view for managing orders.",
+    spaceDescription:
+      "A brand and supply depot built from scratch for an outfit that registers a spot in the beyond and delivers it as a personalized certificate and deed. Customers outfit their order and pay through Stripe, then an automated relay renders their documents, stores uploaded holos, and transmits the finished deed, with a command console for managing every order.",
+    url: "https://spotinheaven.com",
+  },
+  {
+    title: "Harbor Counseling",
+    services:
+      "Squarespace Migration, Next.js Rebuild, SEO Strategy, Instagram Feed, Email Authentication, Hosting",
+    description:
+      "A twenty-page rebuild for an eating disorder and sport psychology practice, moved off Squarespace onto a fast Next.js site. Built around how clients actually search, with pages for each specialty, fees, telehealth, and the areas served, plus an SEO strategy onboarding, a live Instagram feed, and email authentication for the practice's domain.",
+    spaceDescription:
+      "A twenty-page rebuild for an eating disorder and sport psychology practice, evacuated off Squarespace onto a fast Next.js platform. Charted around how clients actually search, with a page for each specialty, fees, telehealth, and every sector served, plus an SEO flight plan, a live Instagram feed, and hardened comm channels for the practice's domain.",
+    url: "https://harborcounselingjax.com",
+  },
+  {
+    title: "Greater Kansas City Chapter, NTMA",
+    services:
+      "Full Site Rebuild, Next.js, Events & Member Directories, LinkedIn Embeds, Custom Forms, Headless WordPress",
+    description:
+      "A full rebuild for the Kansas City chapter of the National Tooling and Machining Association, with events, member and sponsor directories, board profiles, and curated LinkedIn posts across twenty pages. Content is organized as structured data so it can move onto a headless WordPress backend the chapter can edit on its own.",
+    spaceDescription:
+      "A full rebuild for the Kansas City chapter of the National Tooling and Machining Association, with mission schedules, member and sponsor registries, command staff profiles, and curated LinkedIn transmissions across twenty pages. Content is stored as structured data so it can dock with a headless WordPress backend the chapter can run on its own.",
+    url: "https://kcntma.org",
   },
   {
     title: "Society for the Advancement of Psychotherapy",

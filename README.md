@@ -1,75 +1,38 @@
-# 🚀 Getting Started with Create React App (Space Edition)
+# tjslade.com
 
-This project was bootstrapped with  
-✨ **[Create React App](https://github.com/facebook/create-react-app)** — your launchpad into the React galaxy.
+Portfolio site for TJ Slade. Two modes: a clean professional view, and a Star
+Wars "space mode" with a hyperspace jump, a HUD navbar, and Aurebesh text you
+can translate letter by letter.
 
-## 🛠️ Available Scripts
+## Stack
 
-In the project directory, you can run these commands to operate the starship:
+- **Next.js 16** (App Router) with **React 19** and **TypeScript**
+- Plain CSS per component, no UI library
+- **Vercel** hosting, with the contact form as a Next.js route handler
+  (`src/app/api/contact/route.ts`) that sends mail through the Resend API
+- `next/font` for self-hosted Inter and Bebas Neue
 
-### `npm start`
+## Notable pieces
 
-Boots up the app in **development mode** — think of it as low-orbit testing.  
-Open [http://localhost:3000](http://localhost:3000) to view the mission dashboard in your browser.
+- `src/context/ThemeContext.tsx`: mode switching. Entering space mode plays a
+  canvas hyperspace jump (`Hyperspace.tsx`); leaving it reveals the
+  professional page in a circle using the View Transitions API.
+- `src/components/DecodeText`: renders text in Aurebesh and decodes it with a
+  staggered per-letter animation.
+- `src/components/Reveal`, `ScrollProgress`, and the sidebar nav use
+  IntersectionObserver and scroll position for scroll-linked motion.
+- The server always renders professional mode. A small inline script and a
+  layout effect apply a saved space-mode choice before first paint.
+- Every animation respects `prefers-reduced-motion`.
 
-The page will automatically reload when you modify files.  
-Lint errors will appear like tiny asteroids on your console radar.
+## Development
 
-### `npm test`
+```bash
+npm install
+npm run dev
+```
 
-Launches the **Test Runner** in interactive watch mode.  
-A great way to scan the ship for anomalies before entering hyperspace.  
-Learn more about tests here:  
-https://facebook.github.io/create-react-app/docs/running-tests
+Other scripts: `npm run build`, `npm run start`, `npm run typecheck`.
 
-### `npm run build`
-
-Prepares your app for **production deployment** to the `build` folder.  
-React is bundled, optimized, polished, and sealed tighter than a cargo hatch.
-
-The output is minified, filenames include hashes, and the build is ready for interstellar travel.  
-Learn more about deployment here:  
-https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run eject`
-
-**Warning: irreversible hyperspace jump ahead.**  
-Once you `eject`, there is **no going back**.
-
-Ejecting copies all configs (webpack, Babel, ESLint, etc.) out of CRA and into your project so you can customize every system on the ship.  
-You keep all commands (except eject), but you're now flying manual.  
-Use only if you’re ready to pilot with full control.
-
-You never _have_ to eject — the default CRA setup is perfect for small and medium-sized missions.  
-But the option exists for explorers who want complete customization.
-
-## 📚 Learn More
-
-You can explore more galactic knowledge in the official docs:
-
-- CRA Docs: https://facebook.github.io/create-react-app/docs/getting-started
-- React Docs: https://reactjs.org/
-
-### Code Splitting
-
-https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The contact form needs `RESEND_API_KEY`, and optionally `CONTACT_FROM` and
+`CONTACT_TO`, set in the environment.

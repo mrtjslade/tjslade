@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import "./ThemeToggle.css";
 import { useTheme } from "../../context/ThemeContext";
 import DecodeText from "../DecodeText/DecodeText";
@@ -8,7 +8,7 @@ const ARM_DURATION = 3000;
 function ThemeToggle() {
   const { mode, transitioning, toggleMode } = useTheme();
   const [armed, setArmed] = useState(false);
-  const armTimer = useRef(null);
+  const armTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isTouch = useRef(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function ThemeToggle() {
   const isSpace = mode === "space";
   const nextLabel = isSpace ? "Professional Mode" : "Space Mode";
 
-  const handleClick = (e) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (transitioning) return;
 
     const rect = e.currentTarget.getBoundingClientRect();

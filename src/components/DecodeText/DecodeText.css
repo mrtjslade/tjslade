@@ -15,7 +15,7 @@
 
 .decode-letter {
   display: inline-block;
-  font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+  font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
   font-size: 0.92em;
 }
 
@@ -31,7 +31,7 @@ html[data-theme="space"]:not([data-decoded="true"]) .contact-input::placeholder,
 html[data-theme="space"]:not([data-decoded="true"])
   .contact-textarea::placeholder,
 html[data-theme="space"]:not([data-decoded="true"]) .hud-counter {
-  font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+  font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
   font-size: 0.92em;
 }
 
@@ -62,21 +62,21 @@ html[data-theme="space"]:not([data-decoded="true"]) .hud-counter {
     opacity: 0;
     transform: scale(0.4) translateY(-4px);
     color: var(--color-red);
-    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+    font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
     font-size: 0.92em;
   }
   80% {
     opacity: 0.85;
     transform: scale(1.05) translateY(0);
     color: inherit;
-    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+    font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
     font-size: 0.92em;
   }
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
     color: inherit;
-    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+    font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
     font-size: 0.92em;
   }
 }
@@ -86,14 +86,14 @@ html[data-theme="space"]:not([data-decoded="true"]) .hud-counter {
     opacity: 1;
     transform: scale(1) translateY(0);
     color: inherit;
-    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+    font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
     font-size: 0.92em;
   }
   35% {
     opacity: 0;
     transform: scale(0.4) translateY(-4px);
     color: var(--color-red);
-    font-family: "Aurebesh", "Bebas Neue", "Inter", sans-serif;
+    font-family: "Aurebesh", var(--font-bebas), var(--font-inter), sans-serif;
     font-size: 0.92em;
   }
   55% {

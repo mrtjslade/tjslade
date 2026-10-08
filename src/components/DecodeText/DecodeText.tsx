@@ -20,12 +20,17 @@ import { useDecode } from "../../context/DecodeContext";
 
 const ANIMATION_MS = 520;
 
-function DecodeText({ children, stagger = 35 }) {
+type DecodeTextProps = {
+  children: string;
+  stagger?: number;
+};
+
+function DecodeText({ children, stagger = 35 }: DecodeTextProps) {
   const { mode } = useTheme();
   const { decoded } = useDecode();
   const [phase, setPhase] = useState(decoded ? "decoded" : "encoded");
   const prevDecoded = useRef(decoded);
-  const timerRef = useRef(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const text = String(children);
   const totalDuration =

@@ -5,8 +5,14 @@ const DURATION_MS = 900;
 const STAR_COUNT = 220;
 const MIDPOINT = 0.5;
 
-function Hyperspace({ active, onMidpoint, onComplete }) {
-  const canvasRef = useRef(null);
+type HyperspaceProps = {
+  active: boolean;
+  onMidpoint?: () => void;
+  onComplete?: () => void;
+};
+
+function Hyperspace({ active, onMidpoint, onComplete }: HyperspaceProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const callbacksRef = useRef({ onMidpoint, onComplete });
   callbacksRef.current = { onMidpoint, onComplete };
 
@@ -16,6 +22,7 @@ function Hyperspace({ active, onMidpoint, onComplete }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
     const resize = () => {
@@ -38,7 +45,7 @@ function Hyperspace({ active, onMidpoint, onComplete }) {
     let raf = 0;
     let midpointFired = false;
 
-    const animate = (now) => {
+    const animate = (now: number) => {
       const elapsed = now - start;
       const t = Math.min(elapsed / DURATION_MS, 1);
 

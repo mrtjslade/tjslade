@@ -1,3 +1,4 @@
+import type { PointerEvent } from "react";
 import "./Work.css";
 import { projects } from "./WorkData";
 import { useTheme } from "../../context/ThemeContext";
@@ -5,8 +6,8 @@ import DecodeText from "../DecodeText/DecodeText";
 import Reveal from "../Reveal/Reveal";
 
 // Feeds the cursor position to the hovered card so its spotlight follows it.
-function trackSpotlight(e) {
-  const card = e.target.closest(".work-card");
+function trackSpotlight(e: PointerEvent<HTMLDivElement>) {
+  const card = (e.target as HTMLElement).closest<HTMLElement>(".work-card");
   if (!card) return;
   const rect = card.getBoundingClientRect();
   card.style.setProperty("--mx", `${e.clientX - rect.left}px`);

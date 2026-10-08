@@ -1,4 +1,13 @@
-import { Children, cloneElement, useEffect, useRef, useState } from "react";
+import {
+  Children,
+  cloneElement,
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactElement,
+  type Ref,
+} from "react";
 import "./Reveal.css";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -13,9 +22,21 @@ import { useTheme } from "../../context/ThemeContext";
  *   children: exactly one element (required)
  *   delay:    ms before the transition starts after entering view (default 0)
  */
-function Reveal({ children, delay = 0 }) {
+type RevealChild = ReactElement<{
+  className?: string;
+  style?: CSSProperties;
+  ref?: Ref<HTMLElement>;
+}>;
+
+function Reveal({
+  children,
+  delay = 0,
+}: {
+  children: RevealChild;
+  delay?: number;
+}) {
   const { mode } = useTheme();
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {

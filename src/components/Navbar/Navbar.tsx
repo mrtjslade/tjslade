@@ -16,16 +16,32 @@ function HudCounter() {
   return <div className="hud-counter">{String(count).padStart(5, "0")}</div>;
 }
 
+type NavLink = { href: string; label: string };
+
+const proLinks: NavLink[] = [
+  { href: "#about", label: "About" },
+  { href: "#work", label: "Work" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
+];
+
+const spaceLinks: NavLink[] = [
+  { href: "#about", label: "DOSSIER" },
+  { href: "#work", label: "MISSIONS" },
+  { href: "#skills", label: "ARSENAL" },
+  { href: "#contact", label: "COMMS" },
+];
+
 // Pro sidebar links with an accent bar that slides to the section in view.
-function ProNavLinks({ links }) {
-  const [active, setActive] = useState(null);
-  const [bar, setBar] = useState(null);
-  const linkRefs = useRef({});
+function ProNavLinks({ links }: { links: NavLink[] }) {
+  const [active, setActive] = useState<string | null>(null);
+  const [bar, setBar] = useState<{ top: number; height: number } | null>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   useEffect(() => {
     const sections = links
-      .map((link) => document.querySelector(link.href))
-      .filter(Boolean);
+      .map((link) => document.querySelector<HTMLElement>(link.href))
+      .filter((s): s is HTMLElement => s !== null);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,7 +65,9 @@ function ProNavLinks({ links }) {
         <li key={link.href}>
           <a
             href={link.href}
-            ref={(el) => (linkRefs.current[link.href] = el)}
+            ref={(el) => {
+              linkRefs.current[link.href] = el;
+            }}
             className={active === link.href ? "is-active" : undefined}
             aria-current={active === link.href ? "true" : undefined}
           >
@@ -78,7 +96,7 @@ function Navbar() {
   // Close mobile menu on Escape
   useEffect(() => {
     if (!menuOpen) return;
-    const handler = (e) => {
+    const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMenuOpen(false);
     };
     window.addEventListener("keydown", handler);
@@ -92,19 +110,7 @@ function Navbar() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  const proLinks = [
-    { href: "#about", label: "About" },
-    { href: "#work", label: "Work" },
-    { href: "#skills", label: "Skills" },
-    { href: "#contact", label: "Contact" },
-  ];
 
-  const spaceLinks = [
-    { href: "#about", label: "DOSSIER" },
-    { href: "#work", label: "MISSIONS" },
-    { href: "#skills", label: "ARSENAL" },
-    { href: "#contact", label: "COMMS" },
-  ];
 
   const links = isPro ? proLinks : spaceLinks;
 

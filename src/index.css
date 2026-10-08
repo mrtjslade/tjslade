@@ -1,3 +1,12 @@
+/* Aurebesh (Galactic Basic) */
+@font-face {
+  font-family: "Aurebesh";
+  src: url("/fonts/AurebeshAF-Canon.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,8 +28,8 @@ html {
   --color-accent-soft: rgba(255, 215, 0, 0.7);
 
   /* ---- FONTS ---- */
-  --font-heading: "Bebas Neue", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: var(--font-bebas), "Bebas Neue", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
 
   /* ---- FONT SIZES (fluid responsive) ---- */
   --fs-xxl: clamp(3rem, 6vw, 6rem);
@@ -56,8 +65,8 @@ html {
   --color-accent: #1a1a1a;
   --color-accent-soft: rgba(184, 51, 61, 0.14);
 
-  --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --shadow-soft: none;
   --shadow-gold: none;

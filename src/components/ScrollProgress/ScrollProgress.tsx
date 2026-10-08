@@ -6,7 +6,7 @@ import "./ScrollProgress.css";
  * scrolls. Professional mode only (rendered conditionally by App).
  */
 function ScrollProgress() {
-  const barRef = useRef(null);
+  const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let raf = 0;

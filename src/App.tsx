@@ -1,4 +1,5 @@
-import "./App.css";
+"use client";
+
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import { DecodeProvider } from "./context/DecodeContext";
 import Hero from "./components/Hero/Hero";

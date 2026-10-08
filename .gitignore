@@ -25,3 +25,8 @@ yarn-error.log*
 
 # private notes (resume, job applications) - never commit, repo is public
 /private/
+
+# next.js
+/.next/
+next-env.d.ts
+*.tsbuildinfo

@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type CSSProperties } from "react";
 import "./Hero.css";
 import { useTheme } from "../../context/ThemeContext";
 import DecodeText from "../DecodeText/DecodeText";
@@ -8,11 +8,20 @@ const PRO_SUBTITLE =
   "Web developer building modern client sites with React, Next.js, and WordPress, plus the APIs and data pipelines behind them.";
 
 // Each word slides up from behind a mask, staggered by --i.
-function MaskedWords({ text, startIndex = 0 }) {
+function MaskedWords({
+  text,
+  startIndex = 0,
+}: {
+  text: string;
+  startIndex?: number;
+}) {
   return text.split(" ").map((word, i) => (
     <Fragment key={i}>
       <span className="word-mask">
-        <span className="word" style={{ "--i": startIndex + i }}>
+        <span
+          className="word"
+          style={{ "--i": startIndex + i } as CSSProperties}
+        >
           {word}
         </span>
       </span>{" "}

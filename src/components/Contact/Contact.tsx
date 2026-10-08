@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import "./Contact.css";
 import { useTheme } from "../../context/ThemeContext";
 import DecodeText from "../DecodeText/DecodeText";
@@ -10,12 +10,12 @@ function Contact() {
   const title = isPro ? "CONTACT" : "TRANSMISSIONS";
   const [status, setStatus] = useState("idle");
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "sending") return;
     setStatus("sending");
 
-    const form = e.target;
+    const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
 
     try {
@@ -50,7 +50,7 @@ function Contact() {
           type="text"
           name="company"
           className="contact-honeypot"
-          tabIndex="-1"
+          tabIndex={-1}
           autoComplete="off"
           aria-hidden="true"
         />
