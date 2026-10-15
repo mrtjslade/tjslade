@@ -27,7 +27,9 @@ export const metadata: Metadata = {
       "Modern, fast, scalable web experiences with React, Next.js, TypeScript, and WordPress.",
     type: "website",
     url: "https://tjslade.com",
-    images: ["/preview.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
   icons: {
     icon: [
