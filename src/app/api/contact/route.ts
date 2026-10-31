@@ -45,7 +45,8 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
+  const to = process.env.CONTACT_TO;
+  if (!apiKey || !to) {
     return json({ error: "Email service not configured" }, 500);
   }
 
@@ -58,7 +59,7 @@ export async function POST(request: Request) {
     body: JSON.stringify({
       from:
         process.env.CONTACT_FROM || "Portfolio Contact <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO || "mrtjslade@gmail.com"],
+      to: [to],
       reply_to: email,
       subject: "New Portfolio Contact Message!",
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
